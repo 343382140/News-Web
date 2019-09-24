@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<TITLE>{dede:field.seotitle/}_{dede:global.cfg_webname/}</TITLE>
+<META content="{dede:field name='keywords'/}" name=keywords>
+<META content="{dede:field name='description' function='html2text(@me)'/}" name=description>
+<link href="/style/index.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/style/jquery.min.js"></script>
+<!--[if IE 6]><script src="/style/iepng.js" type="text/javascript"></script><script type="text/javascript">EvPNG.fix('div, ul, img, li, input');</script><![endif]-->
+<script type="text/javascript" src="/style/main.js"></script>
+<script src="/style/thinkhover.js"></script>
+<meta http-equiv="mobile-agent" content="format=xhtml;url={dede:global.cfg_mobileurl/}/list.php?tid={dede:field.id/}">
+<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="{dede:global.cfg_mobileurl/}/list.php?tid={dede:field.id/}";}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+</head>
+<body>
+{dede:include filename="n_head.htm"/}
+<div id="center_top">
+  <div id="center_top_left">
+    <div class="center_top_left1"> {dede:arclist row=2 titlelen=38 }
+      <h3><a href="[field:arcurl/]" target=_blank title="[field:title/]" >[field:title/]</a></h3>
+      <a href="[field:arcurl/]" target=_blank title="[field:title/]" ><span>[field:description function="cn_substr(@me,120)"/]</span></a> {/dede:arclist}
+      {dede:arclist row=8 flag='c' titlelen=38}
+      <p><a href="[field:arcurl/]" title="[field:title/]" >[field:title/]</a></p>
+      {/dede:arclist} </div>
+  </div>
+  <div id="right_info">
+    <div class="box01_right info_pic">
+      <div class="list">
+        <ul>
+          {dede:arclist flag='p,n' row='5' titlelen='35' orderby='pubdate'}
+          <li style="display: block; left: -572px;"> <a title="[field:title/]" target="_blank" href="[field:arcurl/]"> <img width="572" height="331" src="[field:litpic/]" />
+            <p>[field:title/]</p>
+            </a> </li>
+          {/dede:arclist}
+        </ul>
+      </div>
+      <div class="btn"> <span class="pre">按钮</span> <span class="next">按钮</span>
+        <ul>
+          {dede:arclist flag='p,n' row='5'  titlelen='35' orderby='pubdate'}
+          <li class="[field:global runphp='yes' name=autoindex](@me < 2)?@me="on":@me="";[/field:global]"><a href="#none">按钮</a></li>
+          {/dede:arclist}
+        </ul>
+      </div>
+    </div>
+    <div class="box02_right">
+      <ul>
+        {dede:arclist flag='p' titlelen='18' limit='0,3' orderby='pubdate'}
+        <li class="box02_right_LI"><a title="[field:title/]" href="[field:arcurl/]" target="_blank"><img width="118" height="80" src="[field:litpic/]" /></a>
+          <p><a title="[field:title/]" href="[field:arcurl/]" target="_blank">[field:title/]</a></p>
+        </li>
+        {/dede:arclist}
+        {dede:arclist flag='p' limit='3,1' titlelen='18' orderby='pubdate'}
+        <li><a title="[field:title/]" href="[field:arcurl/]" target="_blank"><img width="118" height="80" src="[field:litpic/]" /></a>
+          <p><a title="[field:title/]" href="[field:arcurl/]" target="_blank">[field:title/]</a></p>
+        </li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="adimg">{dede:myad name='频道页轮播下通栏'/}</div>
+<div class="new_lanmu_cnt clearfix">
+  <div class="new_lanmu_l">
+    <!--元素-->
+    {dede:channelartlist row='5'}
+    <div class="new_lanmu_list_cnt MB10 clearfix">
+      <div class="lanmu_title">
+        <h3>{dede:field name='typename'/}</h3>
+        <span class="lanmu_more"><a href="{dede:field name='typeurl'/}">更多</a></span> </div>
+      <div class="new_lanmu_cl l">
+        <div class="new_lanmu_list clearfix l">
+          <ul>
+            {dede:arclist titlelen='48' row='6' limit='0,6'}
+            <li class="first_news"><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></li>
+            {/dede:arclist}
+          </ul>
+          <ul>
+            {dede:arclist titlelen='48' row='6' limit='6,6'}
+            <li class="first_news"><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></li>
+            {/dede:arclist}
+          </ul>
+        </div>
+        <div class="new_lanmu_mid clearfix r"> {dede:arclist titlelen='50' row='1' flag='c,p'} <a class="nl_m_p1" href="[field:arcurl/]" title='[field:title /]'> <img src="[field:litpic/]" alt="[field:title /]" width="275" height="160" /> <span>[field:title /]</span> </a> {/dede:arclist}
+          <div class="nl_r_p_cnt"> {dede:arclist titlelen='50' row='2' flag='p' noflag='c'}
+            <div class="nl_r_p_item"> <a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]" width="125" height="90" original="[field:litpic/]"></a> <span>[field:title /]</span> </div>
+            {/dede:arclist} </div>
+        </div>
+      </div>
+    </div>
+    {/dede:channelartlist}
+    <!--元素结束-->
+  </div>
+  <div class="new_lanmu_r">
+    <div class="new_lanmu_rt">
+      <h4>推荐新闻</h4>
+    </div>
+    <ul>
+      {dede:arclist titlelen='50' row='10' typeid='all' flag='c'}
+      <li><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></li>
+      {/dede:arclist}
+    </ul>
+    <div class="new_lanmu_rt">
+      <h4>图片新闻</h4>
+    </div>
+    <div class="new_lanmu_rimg"> {dede:arclist titlelen='50' row='5' typeid='all' flag='c,p'}
+      <div class="new_lanmu_rimga"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]"></a><a href="[field:arcurl/]" title="[field:title /]"><span>[field:title /]</span></a></div>
+      {/dede:arclist} </div>
+  </div>
+</div>
+{dede:include filename="foot.htm"/}
+</body>
+</html>

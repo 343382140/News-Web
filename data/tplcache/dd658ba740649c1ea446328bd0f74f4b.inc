@@ -1,0 +1,1 @@
+<a href="[field:typelink /]" class="more">¸ü¶à</a>

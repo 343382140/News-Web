@@ -1,0 +1,2 @@
+<h3 class="headNew"><a href="view.php?aid=[field:id/]" title="[field:title /]">[field:title /]</a></h3>
+<h5 class="subNew">[field:description function="cn_substr(@me,60)"/]...<a href="view.php?aid=[field:id/]">[¸ü¶à]</a></h5>

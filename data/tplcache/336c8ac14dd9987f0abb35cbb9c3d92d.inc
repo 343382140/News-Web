@@ -1,0 +1,1 @@
+<li><a href="javascript:void(0)">{dede:field name='typename'/}</a></li>

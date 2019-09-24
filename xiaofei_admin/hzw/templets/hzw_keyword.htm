@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>关键词</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li class="current"><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+
+
+
+<table class="tb tb2 ">
+    <tbody>
+      <tr>
+        <th class="partition" colspan="5">温馨提示</th>
+      </tr>
+      <tr>
+        <td class="tipsblock" s="1" colspan="4">
+          <ul>
+            <li>这儿设置的关键词主要显示在需要输入关键词的地方</li>
+            <li>关键词排序号越小越靠前，排序号可以重复</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">
+        	<div style="margin-top:16px;margin-bottom:16px;">
+
+        		<a class="addtr" href="?hot_keyword=yes" onclick="this.innerHTML='执行中，稍等…'">实时热点关键词</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        		<a class="addtr" href="javascript:if(confirm('清空所有')){window.location.href='?clears_all=yes';}" style="background-position-y:-286px">清空所有</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        	
+            </div>
+        </td>
+      </tr>      
+      <tr class="header">
+        <th>关键词</th>
+        <th>排序号</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    <form action="?keyword_add=yes" method="post">
+    <tr class="hover">
+      <td width="30%" style="height:60px" valign="middle"><input type="text" name="keyword" class="txt" style="width:85%;"></td>
+      <td width="20%" style="height:60px" valign="middle"><input type="text" name="orderby_num" class="txt" style="width:85%;"></td>
+      <td width="15%" style="height:60px" valign="middle"><input type="submit" value="添加关键词" class="btn"></td>
+      <td width="35%" style="height:60px" valign="middle">&nbsp;&nbsp;</td>
+    </tr>
+    </form>
+    <form action="?keyword_update=yes" method="post">
+    
+	<?php while($arr = $db->GetArray("hzw")) {  ?>
+      <tr class="hover">
+      <td width="30%"><input type="text" name="keyword<?php echo $arr["ID"]; ?>" class="txt" style="width:85%;" value="<?php echo $arr["word_str"]; ?>"></td>
+      <td width="20%"><input type="text" name="orderby_num<?php echo $arr["ID"]; ?>" class="txt" style="width:85%;" value="<?php echo $arr["orderby_num"]; ?>"></td>
+      <td width="15%"><input type="button" value="删除" class="btn" onclick="window.location.href='?delid=<?php echo $arr["ID"]; ?>'"></td>
+      <td width="35%"><input type="checkbox" checked="" name="ids[]" value="<?php echo $arr["ID"]; ?>" style="display:none"></td>
+      </tr>
+	<?php } ?>       
+
+	
+        <tr>
+    	<td colspan="4">
+        	
+            <div style="margin-top:32px;text-align:center;width:55%">
+            	
+                <input type="submit" value="确定更新关键词和排序" class="btn">
+                
+            </div>
+            
+        </td>
+    </tr> 
+    </form>
+    </tbody>    
+  </table>  
+  
+  
+
+  
+</div>
+
+</body>
+</html>

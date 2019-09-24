@@ -1,0 +1,1 @@
+<div class="pica"> <a class="pica_link" href="[field:arcurl/]" title='[field:title /]'><img src="[field:litpic/]" width="330" height="220"  alt="[field:title /]" /></a> <a class="pica_title" href="[field:arcurl/]" title="[field:title /]">[field:title /]</a> </div>

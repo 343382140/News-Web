@@ -1,0 +1,2 @@
+INSERT INTO `dede_flinktype` VALUES('1','友情链接');
+INSERT INTO `dede_flinktype` VALUES('2','合作单位');

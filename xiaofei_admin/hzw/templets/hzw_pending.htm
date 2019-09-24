@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>待发布</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li class="current"><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+
+  <form name="cpform" method="post" autocomplete="off" action="?run=yes" id="cpform">
+  <input type="hidden" name="page" value="<?php echo $page; ?>">
+  <table class="tb tb2 nobdb">
+    <tbody>
+      <tr>
+        <th class="partition" colspan="5">温馨提示</th>
+      </tr>
+      <tr>
+        <td class="tipsblock" s="1" colspan="5"><ul>
+            <li>“待发布”的内容只有执行“发布”操作之后内容才会在前台显示出来，您可以在“已发布”那里查看成功发布的内容，“待发布”内容删除之后会进入“回收站”。</li>
+            <li>如果开启了“定时采集”，待发布的内容会定时发布出去，没有内容待发布之后会启用定时采集关键词获取内容到待发布这里。</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td colspan="5">
+        	<div style="margin-top:16px;margin-bottom:16px;">
+
+        		<a class="addtr" href="javascript:if(confirm('一键清除发布败的内容')){window.location.href='?sendfail=yes';}" style="background-position-y:-286px">一键清除发布败的内容</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        		<a class="addtr" href="javascript:if(confirm('清空所有')){window.location.href='?clears_all=yes';}" style="background-position-y:-286px">清空所有</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        	
+            </div>
+        </td>
+      </tr>
+      <tr class="header">
+        <th>&nbsp;&nbsp;</th>
+        <th>标题</th>
+        <th>发布栏目</th>
+        <th>发布状态</th>
+        <th>&nbsp;&nbsp;</th>
+      </tr>
+
+      <?php while($arr = $db->GetArray("hzw")) {  ?>      
+      <tr class="hover">
+        <td><input type="checkbox" value="<?php echo $arr["ID"]; ?>" name="idarray[]"></td>
+        <td><a href="<?php echo show_sourcelink($arr["source_link"],$arr["fromurl"]); ?>" target="_blank"><?php echo $arr["title"]; ?></a></td>
+        <td><?php echo typename($arr["typeid"]); ?></td>
+        <td><?php if($arr["artUrl"]=="-1") {?><span style="color:red">发布失败</span><?php } else {?> 待发布 <?php } ?></td>
+        <td>
+        
+        	<a href="?update_id=<?php echo $arr["ID"]; ?>">修改</a>&nbsp;|&nbsp; 
+            <a href="hzw_send_archives.php?id=<?php echo $arr["ID"]; ?>" onclick="this.innerHTML='<strong>稍等</strong>'">发布</a>
+
+        </td>
+      </tr>
+      <?php } ?>         
+
+      <tr>
+        <td colspan="5">
+        
+          <div style="margin:8px 0;">
+
+                <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="checkAll('prefix', this.form, 'idarray', 'chkall')">
+                <label for="chkall">全选</label>
+                &nbsp;&nbsp;
+                <input type="submit" value="全部发布" name="selimport" class="btn" id="selimport" onclick="this.value='发布中……'">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="全部删除" name="seldelete" class="btn">
+            
+           </div>
+          
+          </td>
+      </tr>
+    </tbody>
+  </table>
+<div class="pg" style="margin-top:16px;margin-bottom:32px;">  	
+    
+        <a href="<?php echo $homePage; ?>">首页</a>
+  	<a href="<?php echo $prePage; ?>">上一页</a>
+    &nbsp;&nbsp;<?php echo $showPage; ?>&nbsp;&nbsp; 
+    <a href="<?php echo $nextPage; ?>">下一页</a>
+    <a href="<?php echo $endPage; ?>">尾页</a>&nbsp;&nbsp;
+    <em><?php echo $TotalNumber; ?></em>
+        
+</div>
+</form>
+  
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,877 @@
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FBFCE2">
+  <tr>
+    <td colspan="2"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+
+
+<div style="margin:4px auto;padding:12px;line-height:24px;border:1px solid red" id="csdn123_news">
+
+<div> 关键词：
+    <input type="text" id="csdn123keyword" class="px" placeholder="输入您想要采集的内容关键词或者内容页网址"  size="60" />
+    &nbsp;
+    <select id="searchtype">
+      <option value="tolikeorder">相关度排序</option>
+      <option value="torandomorder">系统随机</option>
+    </select>
+    <button type="button"  id="csdn123_query"  style="vertical-align:top;">采集内容</button>
+  </div>
+  <div style="margin-top:16px;display:block" id="csdn123_moreGongNeng"> 请选择：
+    <select id="csdn123_searchresult">
+      <option value="no">----请在上面输入关键词或者网址采集内容，这儿显示采集的结果----</option>
+    </select>
+    <span id="csdn123_loading"></span>
+    <button type="button"  id="csdn123_newsPre"  style="vertical-align:top;">上一条</button>
+    <button type="button"  id="csdn123_newsNext"  style="vertical-align:top;">下一条</button>
+    <button type="button"  id="csdn123_newsPrePage"  style="vertical-align:top;display:none">上一页</button>
+    <button type="button"  id="csdn123_newsNextPage"  style="vertical-align:top;display:none">下一页</button>
+  </div>
+  <div style="clear:both;margin-top:16px;display:block" id="csdn123_moreGongNeng2"> 其　它：
+    <button type="button"  id="csdn123_reset"  style="vertical-align:top;">初始内容</button>
+    <button type="button"  id="csdn123_likearticle"  style="vertical-align:top;">相似内容</button>
+    <button type="button"  id="csdn123_tongyici"  style="vertical-align:top;">伪原创</button>
+    <button type="button"  id="csdn123_localimgae"  style="vertical-align:top;">图片本地化</button>
+    <button type="button"  id="csdn123_fromurl"  style="vertical-align:top;">来源地址</button>
+    <button type="button"  id="csdn123_textformat"  style="vertical-align:top;">内容排版</button>
+    <button type="button"  id="csdn123_jian"  style="vertical-align:top;">简体</button>
+    <button type="button"  id="csdn123_fan"  style="vertical-align:top;">繁体</button>
+    <br />
+    <br />
+    常用采集关键词：
+	<a href="javascript:csdn123_keyword('家居装饰')">家居装饰</a> |
+	<a href="javascript:csdn123_keyword('美女模特')">美女模特</a> |
+	<a href="javascript:csdn123_keyword('娱乐搞笑')">娱乐搞笑</a> |
+	<a href="javascript:csdn123_keyword('励志名言')">励志名言</a> |
+	<a href="javascript:csdn123_keyword('知识文化')">知识文化</a> |
+	<a href="javascript:csdn123_keyword('键康养生')">键康养生</a> |
+	<a href="javascript:csdn123_keyword('菜谱美食')">菜谱美食</a> |
+	<a href="javascript:csdn123_keyword('服饰美容')">服饰美容</a> |
+	<a href="javascript:csdn123_keyword('情感天地')">情感天地</a> |
+	<a href="javascript:csdn123_keyword('旅游休闲')">旅游休闲</a> |
+	<a href="javascript:csdn123_keyword('影视评论')">影视评论</a>
+	<br>
+    历史采集关键词：
+	<span id="csdn123_tishi_historykeyword"></span> </div>
+
+
+</div>
+
+<script src="./hzw/jquery.cookie.js" type="text/javascript"></script> 
+<script type="text/javascript">
+
+var _csdn123_siteurl = encodeURIComponent(window.location.href);
+
+var _csdn123_s1teurl = encodeURIComponent("<?php echo $cfg_basehost;?>");
+
+var csdn123_remoteUrl="";
+
+var csdn123_page=1;
+
+var csdn123_ToOnePage=true;
+
+var csdn123_showimg="<?php echo $cfg_cmspath . '/' . $hzw_dedeadmin ?>/hzw/display_picture.php";
+
+
+
+$("#csdn123_query").click(function(){
+
+
+
+var csdn123keywordQuery = $("#csdn123keyword").val();
+
+csdn123_getcookies(csdn123keywordQuery);
+
+if(csdn123keywordQuery=="")
+
+{
+
+alert("输入您想要采集的内容关键词或者内容页网址");
+
+$("#csdn123keyword").focus();
+
+return;
+
+}
+
+if(csdn123keywordQuery.length<2)
+
+{
+
+alert("您输入的关键词太短了，请输入至少二个字符以上的关键词！");
+
+$("#csdn123keyword").focus();
+
+return;
+
+}
+
+csdn123keywordQuery=encodeURIComponent(csdn123keywordQuery);
+
+var csdn123onlyTitle=$("#onlyTitle").attr("checked");
+
+if(csdn123onlyTitle=="checked" || csdn123onlyTitle==true)
+
+{
+
+csdn123onlyTitle="yes";
+
+} else {
+
+csdn123onlyTitle="no";
+
+}
+
+var csdn123Searchtype=$("#searchtype").val();
+
+$("#csdn123_loading").html('<img src="./hzw/loading.gif" alt="loading" />');
+
+if(csdn123_ToOnePage)
+
+{
+
+csdn123_page=1;
+
+}
+
+var csdn123_ajax_url="<?php echo $cfg_cmspath . '/' . $hzw_dedeadmin ?>/hzw_csdn123_fun.php?searchtype=" + csdn123Searchtype + "&onlytitle="+ csdn123onlyTitle +"&cms=dede&ip=<?php echo $_SERVER['REMOTE_ADDR']; ?>&page=" + csdn123_page + "&query="+ csdn123keywordQuery +"&siteur1=" + _csdn123_siteurl  + "&s1teur1=" + _csdn123_s1teurl + "&csdn123callback=?";
+
+$.getJSON(csdn123_ajax_url, function(data) {
+
+if(data.total>0){
+
+
+
+$("#csdn123_searchresult").html("");
+
+csdn123_getRemoteUrlContent(data.items[0].url);
+
+var csdn123_i=0;		
+
+for(csdn123_i=0;csdn123_i<data.items.length;csdn123_i++)
+
+{
+
+$("<option value='" + data.items[csdn123_i].url + "' csdn123fromurl='" + data.items[csdn123_i].fromurl + "'>" + data.items[csdn123_i].title + "</option>").appendTo("#csdn123_searchresult");
+
+}
+
+} else if (data.total==0 && csdn123keywordQuery.indexOf("http")==0) {	
+
+
+$("#title").val(data.title);
+$("#tags").val(data.tags_word);
+data.firstPost=data.firstPost.replace(/http:\/\/www.csdn123.net\/zd_version\/zd9\/display_picture\.php/g,csdn123_showimg);
+if(typeof(CKEDITOR)!="undefined")
+{
+	CKEDITOR.instances.body.setData(data.firstPost);
+
+}
+if(typeof(FCKeditorAPI)!="undefined")
+{
+	var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+	csdn123_fckeditor.SetHTML(data.firstPost);
+	
+}
+if(typeof(ue)!="undefined")
+{
+	ue.ready(function() {
+    	ue.setContent(data.firstPost);
+	});
+}
+if(typeof(UE)!="undefined")
+{
+	UE.getEditor('body').setContent(data.firstPost);
+}
+
+
+} else {
+
+alert("抱歉！！未采集到内容！！您可以使用实时采集来获取更多的内容。");
+
+$("#csdn123keyword").focus();
+
+}
+
+$("#csdn123_loading").html("");
+
+$("#csdn123_newsNextPage").show();
+
+$("#csdn123_newsPrePage").show();
+
+csdn123_ToOnePage=true;
+
+});	
+
+});
+
+
+
+$("#csdn123_newsPre,#csdn123_newsNext").click(function(){
+
+
+
+var csdn123_sel_index=$("#csdn123_searchresult option:selected").index();
+
+if($(this).text()=="上一条")
+
+{
+
+csdn123_sel_index--;
+
+} else {
+
+csdn123_sel_index++;
+
+}
+
+if(csdn123_sel_index<=0)
+
+{
+
+csdn123_sel_index=0;
+
+}
+
+if(csdn123_sel_index>=$("#csdn123_searchresult option").length)
+
+{
+
+csdn123_sel_index--;
+
+}
+
+var csdn123_preObj=$("#csdn123_searchresult option").eq(csdn123_sel_index);
+
+csdn123_preObj.attr('selected','selected');
+
+csdn123_getRemoteUrlContent(csdn123_preObj.val());
+
+
+
+});
+
+
+
+$("#csdn123_newsPrePage,#csdn123_newsNextPage").click(function(){
+
+
+
+if($(this).attr("id")=="csdn123_newsNextPage")
+
+{
+
+csdn123_page++;
+
+} 
+
+if($(this).attr("id")=="csdn123_newsPrePage")
+
+{
+
+csdn123_page--;
+
+}
+
+if(csdn123_page<=1)
+
+{
+
+csdn123_page=1;
+
+}
+
+csdn123_ToOnePage=false;
+
+$("#csdn123_query").click();
+
+
+
+});
+
+
+
+$("#csdn123_tongyici").click(function(){
+
+$("#csdn123_loading").html('<img src="./hzw/loading.gif" alt="loading" />');
+
+//var csdn123_contentHtmlCode=$("#e_iframe").contents().find("body").html();
+if(typeof(CKEDITOR)!="undefined")
+{
+	var csdn123_tongyiciText=CKEDITOR.instances.body.document.getBody().getText();
+	var csdn123_contentHtmlCode=CKEDITOR.instances.body.getData();
+
+}
+if(typeof(FCKeditorAPI)!="undefined")
+{
+	var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+	var csdn123_contentHtmlCode=csdn123_fckeditor.GetXHTML(true);
+	var csdn123_tongyiciText=csdn123_contentHtmlCode.replace(/\s+/ig,"");
+	csdn123_tongyiciText=csdn123_tongyiciText.replace(/<.+?>/ig,"");
+	
+}
+if(typeof(ue)!="undefined")
+{
+	var csdn123_contentHtmlCode="";
+	var csdn123_tongyiciText="";
+	ue.ready(function() {
+    	csdn123_contentHtmlCode = ue.getContent();
+		csdn123_tongyiciText=ue.getContentTxt();
+		
+	});
+}
+if(typeof(UE)!="undefined")
+{
+	var csdn123_contentHtmlCode="";
+	var csdn123_tongyiciText="";
+   	csdn123_contentHtmlCode = UE.getEditor('body').getContent();
+	csdn123_tongyiciText = UE.getEditor('body').getContentTxt();		
+}
+csdn123_tongyiciText=csdn123_tongyiciText.replace(/[^\u4e00-\u9fa5]/ig,"");
+
+if(csdn123_contentHtmlCode.length<20)
+
+{
+
+alert("编辑器中没有内容或者内容很少，不能调用伪原创的功能。");
+
+$("#csdn123_loading").html('');
+
+return;
+
+}
+
+$.get("<?php echo $cfg_cmspath . '/' . $hzw_dedeadmin ?>/hzw_csdn123_fun.php?originality=yes",function(data){
+
+
+if(data.indexOf('=')==-1)
+{
+alert("您没有添加伪原创词库，不能使用伪原创功能，请去添加同义词库！");window.location.href="hzw_original.php";
+$("#csdn123_loading").html('');
+return false;
+}
+var csdn123_tempTongyiciArr;
+
+data=data.split(",");				
+
+for(var csdn123_i=0;csdn123_i<data.length;csdn123_i++)
+
+{
+
+csdn123_tempTongyiciArr=data[csdn123_i].split("=");
+
+csdn123_contentHtmlCode=csdn123_contentHtmlCode.replace(csdn123_tempTongyiciArr[0],csdn123_tempTongyiciArr[1]);
+
+}
+
+csdn123_contentHtmlCode=csdn123_contentHtmlCode.replace(/_hzw_/ig,"");
+
+//$("#e_iframe").contents().find("body").html(csdn123_contentHtmlCode);
+
+if(typeof(CKEDITOR)!="undefined")
+{
+	CKEDITOR.instances.body.setData(csdn123_contentHtmlCode);
+
+}
+if(typeof(FCKeditorAPI)!="undefined")
+{
+	var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+	csdn123_fckeditor.SetHTML(csdn123_contentHtmlCode);
+	
+}
+if(typeof(ue)!="undefined")
+{
+	ue.ready(function() {
+    	ue.setContent(csdn123_contentHtmlCode);
+	});
+}
+if(typeof(UE)!="undefined")
+{
+	UE.getEditor('body').setContent(csdn123_contentHtmlCode);
+}
+
+$("#csdn123_loading").html('');
+
+
+
+})
+
+
+
+});
+
+
+
+$("#csdn123_likearticle").click(function(){
+
+
+
+$("#csdn123_loading").html('<img src="./hzw/loading.gif" alt="loading" />');
+
+var csdn123_likearticleData=$("#e_iframe").contents().find("body").text();
+
+csdn123_likearticleData=csdn123_likearticleData + $("#title").val();
+
+csdn123_likearticleData=csdn123_likearticleData.replace(/[^\u4e00-\u9fa5]/g,'');
+
+if(csdn123_likearticleData.length<5)
+
+{
+
+$("#csdn123_loading").html('');
+
+return;
+
+}
+
+csdn123_likearticleData=encodeURIComponent(csdn123_likearticleData);
+
+$.post("<?php echo $cfg_cmspath . '/' . $hzw_dedeadmin ?>/hzw_csdn123_fun.php","likearticleData=" + csdn123_likearticleData,function(data){
+
+
+
+$("#csdn123keyword").val(data);
+
+$("#csdn123_query").click();
+
+$("#csdn123_loading").html('');
+
+
+
+},"json");
+
+
+
+});
+
+
+$("#csdn123_searchresult").change(function(){
+
+
+
+csdn123_CurrentRemoteUrl=$(this).children('option:selected').val();
+
+if(csdn123_CurrentRemoteUrl.indexOf("http")!=-1)
+
+{
+
+csdn123_getRemoteUrlContent(csdn123_CurrentRemoteUrl);
+
+}
+
+
+
+
+
+});
+
+
+
+$("#csdn123_localimgae").click(function(){
+
+	$("#remote").attr("checked",true);
+	$("#remote").attr("checked","checked");
+	$(this).css("color","#ccc");
+
+});
+
+$("#csdn123_fromurl").click(function(){
+
+var csdn123fromurl=$("#csdn123_searchresult option:selected").attr("csdn123fromurl");
+
+if(csdn123fromurl.indexOf("http")!=-1)
+{
+
+	$(this).css("color","#ccc");
+	
+	if(typeof(CKEDITOR)!="undefined")
+	{
+		csdn123_htmlcode=CKEDITOR.instances.body.getData();
+		csdn123_htmlcode=csdn123_htmlcode + "<br><br>来源地址：" + csdn123fromurl;
+		CKEDITOR.instances.body.setData(csdn123_htmlcode);
+	
+	}
+	if(typeof(FCKeditorAPI)!="undefined")
+	{
+		var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+		csdn123_htmlcode=csdn123_fckeditor.GetXHTML(true);
+		csdn123_htmlcode=csdn123_htmlcode + "<br><br>来源地址：" + csdn123fromurl;
+		csdn123_fckeditor.SetHTML(csdn123_htmlcode);	
+		
+	}
+	if(typeof(ue)!="undefined")
+	{
+		ue.ready(function() {
+			csdn123_htmlcode=ue.getContent();
+			csdn123_htmlcode=csdn123_htmlcode + "<br><br>来源地址：" + csdn123fromurl;
+			ue.setContent(csdn123_htmlcode);
+		});
+	}
+	if(typeof(UE)!="undefined")
+	{
+
+		csdn123_htmlcode=UE.getEditor('body').getContent();
+		csdn123_htmlcode=csdn123_htmlcode + "<br><br>来源地址：" + csdn123fromurl;
+		UE.getEditor('body').setContent(csdn123_htmlcode);
+
+	}
+	alert("文章来源地址已经添加到文章的最下面！");
+
+}
+
+
+
+});
+
+$("#csdn123_textformat").click(function(){
+
+	if(typeof(CKEDITOR)!="undefined")
+	{
+		csdn123_htmlcode=CKEDITOR.instances.body.getData();
+		csdn123_htmlcode=csdn123_htmlcode.replace(/(<img[^<>]+?>)/ig,"<br>$1<br>");
+		csdn123_htmlcode=csdn123_htmlcode.replace(/<\/p>/ig,"</p><br />");
+		CKEDITOR.instances.body.setData(csdn123_htmlcode);
+	
+	}
+	if(typeof(FCKeditorAPI)!="undefined")
+	{
+		var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+		csdn123_htmlcode=csdn123_fckeditor.GetXHTML(true);
+		csdn123_htmlcode=csdn123_htmlcode.replace(/(<img[^<>]+?>)/ig,"<br>$1<br>");
+		csdn123_htmlcode=csdn123_htmlcode.replace(/<\/p>/ig,"</p><br />");
+		csdn123_fckeditor.SetHTML(csdn123_htmlcode);
+		
+	}
+	if(typeof(ue)!="undefined")
+	{
+		ue.ready(function() {
+			csdn123_htmlcode=ue.getContent();
+			csdn123_htmlcode=csdn123_htmlcode.replace(/(<img[^<>]+?>)/ig,"<br>$1<br>");
+			csdn123_htmlcode=csdn123_htmlcode.replace(/<\/p>/ig,"</p><br />");
+			ue.setContent(csdn123_htmlcode);	
+		});
+	}
+	if(typeof(UE)!="undefined")
+	{
+
+		csdn123_htmlcode=UE.getEditor('body').getContent();
+		csdn123_htmlcode=csdn123_htmlcode.replace(/(<img[^<>]+?>)/ig,"<br>$1<br>");
+		csdn123_htmlcode=csdn123_htmlcode.replace(/<\/p>/ig,"</p><br />");
+		UE.getEditor('body').setContent(csdn123_htmlcode);
+
+	}
+
+});
+
+$("#csdn123_reset").click(function(){
+
+
+
+if(csdn123_remoteUrl.indexOf("http")!=-1)
+
+{
+
+csdn123_getRemoteUrlContent(csdn123_remoteUrl);
+
+}
+
+
+
+});
+
+$("#csdn123_jian,#csdn123_fan").click(function(){
+
+
+
+$("#csdn123_loading").html('<img src="./hzw/loading.gif" alt="loading" />');
+
+if(typeof(CKEDITOR)!="undefined")
+{
+	var csdn123_contentHtmlCode=CKEDITOR.instances.body.getData();
+}
+if(typeof(FCKeditorAPI)!="undefined")
+{
+	var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+	csdn123_contentHtmlCode=csdn123_fckeditor.GetXHTML(true);
+}
+if(typeof(ue)!="undefined")
+{
+	ue.ready(function() {
+		csdn123_contentHtmlCode=ue.getContent();
+	});
+}
+if(typeof(UE)!="undefined")
+{
+
+	csdn123_contentHtmlCode=UE.getEditor('body').getContent();
+}
+var csdn123_jianTextData=csdn123_contentHtmlCode;
+
+var csdn123_title=$("#title").val();
+
+var convertType="toGBK";		
+
+csdn123_jianTextData=csdn123_jianTextData + csdn123_title;
+
+csdn123_jianTextData=csdn123_jianTextData.replace(/[^\u4e00-\u9fa5]/g,'');
+
+if(csdn123_jianTextData.length<3)
+
+{
+
+$("#csdn123_loading").html('');
+
+return;
+
+}
+
+csdn123_jianTextData=encodeURIComponent(csdn123_jianTextData);		
+
+if($(this).attr("id")=="csdn123_fan")
+
+{
+
+convertType="toBIG";
+
+}
+
+$.post("<?php echo $cfg_cmspath . '/' . $hzw_dedeadmin ?>/hzw_csdn123_fun.php","convertType=" + convertType + "&csdn123_jianTextData=" + csdn123_jianTextData,function(data){
+
+
+
+var csdn123_tempTextDataArr;			
+
+for(var csdn123_i=0;csdn123_i<data.length;csdn123_i++)
+
+{
+
+csdn123_tempTextDataArr=data[csdn123_i].split("=");
+
+csdn123_regexp=csdn123_tempTextDataArr[0];
+
+var csdn123_regexp=new RegExp(csdn123_regexp,"ig");
+
+csdn123_contentHtmlCode=csdn123_contentHtmlCode.replace(csdn123_regexp,csdn123_tempTextDataArr[1]);
+
+csdn123_title=csdn123_title.replace(csdn123_regexp,csdn123_tempTextDataArr[1]);
+
+}
+
+if(typeof(CKEDITOR)!="undefined")
+{
+	CKEDITOR.instances.body.setData(csdn123_contentHtmlCode);
+
+}
+if(typeof(FCKeditorAPI)!="undefined")
+{
+	var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+	csdn123_fckeditor.SetHTML(csdn123_contentHtmlCode);
+	
+}
+if(typeof(ue)!="undefined")
+{
+	ue.ready(function() {
+    	ue.setContent(csdn123_contentHtmlCode);
+	});
+}
+if(typeof(UE)!="undefined")
+{
+	UE.getEditor('body').setContent(csdn123_contentHtmlCode);
+}
+
+$("#title").val(csdn123_title);
+
+$("#csdn123_loading").html('');
+
+
+
+},"json")
+
+
+
+});
+
+
+
+
+
+
+
+
+
+function csdn123_keyword(str)
+
+{
+
+$("#csdn123keyword").val(str);
+
+$("#csdn123_query").click();
+
+}
+
+
+
+function csdn123_getRemoteUrlContent(url)
+{
+
+
+csdn123_remoteUrl=url;
+
+$("#csdn123_loading").html('<img src="./hzw/loading.gif" alt="loading" />');
+
+csdn123_catchUrl="<?php echo $cfg_cmspath . '/' . $hzw_dedeadmin ?>/hzw_csdn123_fun.php?getremoteurl=yes&cms=dede&ip=::1&siteur1=" + _csdn123_siteurl  + "&s1teur1=" + _csdn123_s1teurl + "&url="+ encodeURIComponent(url) +"&csdn123content=?";
+
+$.getJSON(csdn123_catchUrl,function(data){
+
+
+
+if(data.status=="ok")
+
+{
+
+$("#title").val(data.title);
+
+$("#tags").val(data.tags_word);
+
+var csdn123_data_content=data.content;
+
+csdn123_data_content=csdn123_data_content.replace(/http:\/\/www.csdn123.net\/mydata\/showimg\.php/g,csdn123_showimg);
+
+csdn123_data_content=csdn123_data_content.replace(/http:\/\/www.csdn123.net\/mydata\/zhihuimg\.php/g,csdn123_showimg);
+
+csdn123_data_content=csdn123_data_content.replace(/http:\/\/www.csdn123.net\/mydata\/nicimg\.php/g,csdn123_showimg);
+
+csdn123_data_content=csdn123_data_content.replace(/http:\/\/www.csdn123.net\/mydata\/showbaiduimg\.php/g,csdn123_showimg);
+
+csdn123_data_content=csdn123_data_content.replace(/http:\/\/www.csdn123.net\/zd_version\/zd9\/display_picture\.php/g,csdn123_showimg);
+
+if(typeof(CKEDITOR)!="undefined")
+{
+	CKEDITOR.instances.body.setData(csdn123_data_content);
+
+}
+if(typeof(FCKeditorAPI)!="undefined")
+{
+	var csdn123_fckeditor = FCKeditorAPI.GetInstance('body');
+	csdn123_fckeditor.SetHTML(csdn123_data_content);
+	
+}
+if(typeof(ue)!="undefined")
+{
+	ue.ready(function() {
+    	ue.setContent(csdn123_data_content);
+	});
+}
+if(typeof(UE)!="undefined")
+{
+	UE.getEditor('body').setContent(csdn123_data_content);
+}
+
+$("#csdn123_loading").html('');
+
+$("#csdn123_moreGongNeng,#csdn123_moreGongNeng2").show();
+
+}
+
+
+
+});
+
+
+
+}
+
+
+
+function csdn123_getcookies(csdn123keywordQuery)
+
+{
+
+if(csdn123keywordQuery.indexOf("http")!=-1 || csdn123keywordQuery.length>5)
+
+{
+
+return false;
+
+}
+
+var csdn123TempCookies=$.cookie("csdn123");
+
+if(csdn123TempCookies==undefined && csdn123keywordQuery=="")
+
+{
+
+return false;
+
+
+
+}else if(csdn123keywordQuery!=""){
+
+
+
+if(csdn123TempCookies && csdn123TempCookies.indexOf("|")>0)
+
+{
+
+csdn123TempCookies=csdn123TempCookies.replace(csdn123keywordQuery + "|","");
+
+}
+
+if(csdn123TempCookies==undefined)
+
+{
+
+csdn123TempCookies=csdn123keywordQuery + "|";
+
+} else {
+
+csdn123TempCookies=csdn123keywordQuery + "|" + csdn123TempCookies;
+
+}
+
+}
+
+$.cookie("csdn123",csdn123TempCookies);
+
+var csdn123TempCookiesArr=csdn123TempCookies.split("|");
+
+var csdn123_j=0;
+
+var csdn123_cookieKeyword="";
+
+for(csdn123_j=0;csdn123_j<csdn123TempCookiesArr.length;csdn123_j++)
+
+{
+
+if(csdn123TempCookiesArr[csdn123_j]!="" && csdn123TempCookiesArr[csdn123_j]!="undefined")
+
+{
+
+csdn123_cookieKeyword+="<a href=\"javascript:csdn123_keyword('" + csdn123TempCookiesArr[csdn123_j] + "')\">" + csdn123TempCookiesArr[csdn123_j] + "</a> | "
+
+}
+
+if(csdn123_j>16)
+
+{
+
+break;
+
+}
+
+}
+
+$("#csdn123_tishi_historykeyword").html(csdn123_cookieKeyword);
+
+}
+
+csdn123_getcookies("");
+
+</script> 
+
+ 
+
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>

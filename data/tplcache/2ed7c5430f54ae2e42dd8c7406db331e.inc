@@ -1,0 +1,1 @@
+<a href="[field:typelink /]"><img src="/style/video_logo.png" width="auto" height="35" /></a>

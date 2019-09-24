@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>添加采集规则</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li class="current"><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+  
+<form action="?smtAddRule=yes" method="post" id="form1">  
+  <input type="hidden" name="zhiwu" id="zhiwu" />
+  <table class="tb tb2 ">
+    <tr>
+        <th class="partition">温馨提示</th>
+    </tr>
+    <tr>
+        <td class="tipsblock" s="1">
+          <ul>
+            <li>对一些不能用正文提取算法的内容，请指定自定义采集规则</li>
+            <li>在网页HTML源代码中，使用前后截取的方式，指定开头字符串和结尾字符串</li>
+          </ul>
+       </td>
+    </tr>
+<tr>
+<td >
+<br><br>
+<a href="?add_rule=yes" class="addtr">添加采集规则</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="?admin_rule=yes" class="addtr">管理采集规则</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="?import_rule=yes" class="addtr">导入采集规则</a>
+<br><br>
+</td>
+</tr>
+    <tr>
+      <td  class="td27" s="1">采集规则名称</td>
+    </tr>
+    <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+      <td class="vtop rowform" >
+<input name="rule_name" id="rule_name" type="text" class="txt"><br><br>
+<strong>提示：</strong>您可以输入网站名称，如：xxx网的采集规则<br><br><br><br>
+  </td>
+    </tr>	
+    <tr>
+      <td  class="td27" s="1">采集标题</td>
+    </tr>
+    <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+      <td class="vtop rowform" >
+  
+<div style="margin-bottom:8px;padding-bottom:8px;">
+1.&nbsp;&nbsp;&nbsp;&nbsp;开头字符串：
+<input type="text" class="txt" name="title01_start" value="<title>" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+结尾字符串：
+<input type="text" class="txt" name="title01_end" value="</title>" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+2.&nbsp;&nbsp;&nbsp;&nbsp;开头字符串：
+<input type="text" class="txt" name="title02_start" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+结尾字符串：
+<input type="text" class="txt" name="title02_end" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+3.&nbsp;&nbsp;&nbsp;&nbsp;开头字符串：
+<input type="text" class="txt" name="title03_start" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+结尾字符串：
+<input type="text" class="txt" name="title03_end" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+<strong>提示：</strong>
+如果第1条采集规则匹配结果为空，会自动用第2条规则去匹配，以此类推。
+</div><br><br><br>
+
+
+  </td>
+    </tr>
+<tr>
+      <td class="td27" s="1">采集内容</td>
+    </tr>
+    <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+      <td class="vtop rowform" >
+  
+<div style="margin-bottom:8px;padding-bottom:8px;">
+1.&nbsp;&nbsp;&nbsp;&nbsp;开头字符串：
+<input type="text" class="txt" name="content01_start" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+结尾字符串：
+<input type="text" class="txt" name="content01_end" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+2.&nbsp;&nbsp;&nbsp;&nbsp;开头字符串：
+<input type="text" class="txt" name="content02_start" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+结尾字符串：
+<input type="text" class="txt" name="content02_end" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+3.&nbsp;&nbsp;&nbsp;&nbsp;开头字符串：
+<input type="text" class="txt" name="content03_start" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+结尾字符串：
+<input type="text" class="txt" name="content03_end" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+<strong>提示：</strong>
+如果第1条采集规则匹配结果为空，会自动用第2条规则去匹配，以此类推。
+</div><br><br>
+
+
+  </td>
+    </tr>
+<tr>
+      <td class="td27" s="1">过滤内容</td>
+    </tr>
+    <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+      <td class="vtop rowform" >
+  
+<div style="margin-bottom:8px;padding-bottom:8px;">
+1.&nbsp;&nbsp;&nbsp;&nbsp;将字符串：
+<input type="text" class="txt" name="replace01_start" value="" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+替换为：
+<input type="text" class="txt" name="replace01_end" value="" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+2.&nbsp;&nbsp;&nbsp;&nbsp;将字符串：
+<input type="text" class="txt" name="replace02_start" value="" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+替换为：
+<input type="text" class="txt" name="replace02_end" value="" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+3.&nbsp;&nbsp;&nbsp;&nbsp;将字符串：
+<input type="text" class="txt" name="replace03_start" value="" />
+&nbsp;&nbsp;-----&nbsp;&nbsp;
+替换为：
+<input type="text" class="txt" name="replace03_end" value="" />
+</div>
+
+<div style="margin-bottom:8px;padding-bottom:8px;">
+<strong>提示：</strong>
+如果想删除某一些无用的字符串，在“替换为”那里留空即可。
+</div><br><br>
+
+
+  </td>
+    </tr>
+<tr>
+      <td  class="td27" s="1">规则说明</td>
+    </tr>
+    <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+      <td class="vtop rowform" >
+<input name="rule_remark" id="rule_remark" type="text" class="txt" style="width:450px"><br><br>
+  </td>
+    </tr>
+    <tr>
+      <td><br />
+        <div class="fixsel">
+          <input type="submit" class="btn" value="确定添加">
+        </div></td>
+    </tr>
+  </table>
+</form>
+<script>
+if(window.location.hostname.length>5)
+{
+document.getElementById('zhiwu').value="http://" + window.location.hostname;
+}
+</script>
+
+</div>
+</body>
+</html>

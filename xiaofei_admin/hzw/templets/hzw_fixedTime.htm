@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>定时采集</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li class="current"><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+
+<table class="tb tb2 nobdb">
+    <tbody>
+      <tr>
+        <th class="partition" colspan="5">温馨提示</th>
+      </tr>
+      <tr>
+        <td class="tipsblock" s="1" colspan="5"><ul>
+            <li>触发定时采集的接口地址：<?php echo $cronUrl; ?></li>
+			<li>您可以在DedeCms的footer.htm模板或者其它的公用模板中加入如下触发代码<br> &lt;script src="<?php echo $cronUrl; ?>" defer&gt;&lt;/script&gt; </li>
+            <li>如果DedeCms自身不会触发定时采集，您可以把定时采集接口地址放入第三方HTTP监控那里来触发定时采集。</li>
+            <li>设置图文教程：<a href="http://user.qzone.qq.com/155120699/blog/1497412177" target="_blank">http://user.qzone.qq.com/155120699/blog/1497412177</a> </li>
+			<?php if($pendingCount>0) {?>
+			<li style="margin-top:16px;margin-bottom:16px;">
+			
+			<a href="hzw_released.php?catch_way=auto" style="color:red;font-size:14px;text-decoration:none">
+			提示：有<?php echo $pendingCount; ?>条待发布的内容，成功定时自动发布<?php echo $autoSendCount;?>条，如果没有待发布的内容，会自动用定时采集的关键词去获取内容。
+			</a>
+			
+			</li>
+			<?php } ?>
+          </ul></td>
+      </tr>
+      <tr>
+        <td colspan="5">
+        	<div style="margin-top:4px;margin-bottom:20px;">
+            
+                <a href="?add=yes" class="addtr">添加定时采集的关键词</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+        		<a href="javascript:if(confirm('清空所有')){window.location.href='?clears_all=yes';}" class="addtr" style="background-position-y:-286px">清空所有</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                
+            </div>
+       </td>
+      </tr>      
+      <tr class="header">
+        <th>关键词</th>
+        <th>发布栏目</th>
+        <th>采集次数</th>        
+        <th>最后采集时间</th>
+        <th>&nbsp;&nbsp;</th>
+      </tr>
+      
+      <?php	  
+	  while($arr = $db->GetArray('hzw')) {
+	  ?>      
+      <tr class="hover">
+        <td><?php echo $arr['keyword']; ?></td>
+        <td><?php echo typename($arr['typeid']); ?></td>
+        <td><?php echo $arr['catchnum']; ?></td>
+        <td><?php echo date("Y-m-d H:i:s",$arr['catchtime']); ?></td>
+        <td>
+        	<a href="?update_id=<?php echo $arr['ID']; ?>">修改</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+        	<a href="?del=<?php echo $arr['ID']; ?>">删除</a>
+        </td>
+      </tr>
+      <?php } ?>            
+      
+    </tbody>
+  </table>
+  
+</div>
+<script>
+function chkdata()
+{
+	if($("keyword").value=="")
+	{	
+		alert("关键词不能为空！！");	
+		$("keyword").focus();
+		return false;
+		
+	} else {		
+		
+		return true;
+	}
+}
+
+function pushurl(num)
+{
+
+switch(num)
+{
+
+case 1:
+$("column_url").value="http://www.qq.com";
+$("needstr").value="qq.com,a,2017,htm";
+break;
+
+case 2:
+$("column_url").value="http://news.163.com/";
+$("needstr").value="163.com,17,htm";
+break;
+
+case 3:
+$("column_url").value="http://news.sina.com.cn/";
+$("needstr").value="sina,2017,htm";
+break;
+
+case 4:
+$("column_url").value="http://news.ifeng.com/";
+$("needstr").value="ifeng,2017,htm";
+break;
+
+case 5:
+$("column_url").value="http://www.people.com.cn/";
+$("needstr").value="people,2017,n1,htm";
+break;
+
+case 6:
+$("column_url").value="http://www.xinhuanet.com/";
+$("needstr").value="xinhuanet,2017,c_,htm";
+break;
+
+case 7:
+$("column_url").value="http://www.gmw.cn/";
+$("needstr").value="gmw,2017,content_,htm";
+break;
+
+case 8:
+$("column_url").value="http://www.china.com.cn/";
+$("needstr").value="china,2017,htm";
+break;
+
+
+}
+
+}
+</script>
+</body>
+</html>

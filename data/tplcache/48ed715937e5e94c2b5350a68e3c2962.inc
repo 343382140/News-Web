@@ -1,0 +1,2 @@
+{dede:charset}utf-8{/dede:charset}{dede:list}http://world.gmw.cn/node_4661.htm{/dede:list}{dede:page}http://world.gmw.cn/(*)/(*)/content_(*).htm{/dede:page}{dede:titlerule}<title>[ÄÚÈİ]</title>{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<!--enpcontent-->[ÄÚÈİ]<!--/enpcontent-->
+{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}

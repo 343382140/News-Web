@@ -1,0 +1,217 @@
+/* 织梦58（dede58.com）做最好的织梦整站模板下载网站 */
+body {
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+.MB10 {
+	margin-bottom: 10px
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.video_top {
+	width: 100%;
+	height: 35px;
+	background: #efefef;
+}
+.video_top .video_logo {
+	width: 150px;
+	height: 35px;
+	float: left;
+}
+.video_top ul {
+	width: auto;
+	float: left;
+	height: 35px;
+	font-size: 12px;
+	line-height: 35px;
+	margin: 0 auto;
+}
+.video_top ul li {
+	width: auto;
+	float: left;
+	padding: 0 15px 0 15px;
+}
+.video_top .top_content {
+	width: 980px;
+	height: 35px;
+	margin: 0 auto;
+}
+.video_top ul span {
+	float: left;
+	color: #ccc;
+}
+.video_top ul li a, .video_top ul li a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.video_top ul li a:hover, .video_top ul li a:active {
+	color: #666;
+	text-decoration: underline;
+}
+.video_container {
+	width: 100%;
+	height: 600px;
+	background: #303030;
+	overflow: hidden;
+}
+.video_container .video_nav {
+	width: 980px;
+	margin: 10px auto 0;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	color: #ccc;
+}
+.video_nav a, .video_nav a:visited {
+	color: #ccc;
+	text-decoration: none;
+}
+.video_nav a:hover, .video_nav a:active {
+	color: #eee;
+	text-decoration: underline;
+}
+.video_container .video_body {
+	width: 980px;
+	height: 480px;
+	margin: 10px auto 0;
+	background: #000;
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, .8);
+}
+.video_xiangguan_lnk {
+	font-size: 12px;
+	line-height: 36px;
+	color: #bbb;
+	width: 960px;
+	padding: 0 10px 0 10px;
+	height: 36px;
+	background: url(video_xiangguan_link.png) no-repeat;
+	margin: 15px auto 0;
+}
+.video_xiangguan_lnk span {
+	font-weight: bold;
+}
+.video_xiangguan_lnk a, .video_xiangguan_lnk a:visited {
+	color: #ccc;
+	text-decoration: none;
+}
+.video_xiangguan_lnk a:hover, .video_xiangguan_lnk a:active {
+	color: #ccc;
+	text-decoration: underline;
+}
+.video_info_lnk {
+	width: 980px;
+	height: auto;
+	margin: 15px auto 0;
+}
+.vil_left {
+	width: 635px;
+}
+.vil_left .video_share {
+	width: 635px;
+	height: 40px;
+	background: #f2f2f2;
+	line-height: 40px;
+	font-size: 12px;
+	color: #666;
+}
+.vil_left .video_share img {
+	float: left;
+}
+.vil_left .video_share .video_vcnt {
+	font-family: Constantia;
+	font-weight: bold;
+	font-size: 16px;
+}
+.video_stle {
+	width: 625px;
+	height: 35px;
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	line-height: 35px;
+	color: #666;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+.video_zy_cnt {
+	width: 625px;
+	padding: 5px 0 5px 10px;
+	font-size: 12px;
+	line-height: 30px;
+}
+.video_zy_cnt .zy_a {
+	font-style: normal;
+}
+.video_zy_cnt span {
+	color: #666;
+}
+.video_zy_cnt i {
+	margin-right: 10px;
+	font-style: normal;
+}
+.video_zy_cnt a, .video_zy_cnt a:visited {
+	color: #198bde;
+	text-decoration: none;
+	padding: 0 10px 0 0;
+}
+.video_zy_cnt a:hover, .video_zy_cnt a:active {
+	color: #198bde;
+	text-decoration: underline;
+}
+.video_ad {
+	width: 635px;
+	height: 110px;
+	margin-top: 10px;
+	overflow: hidden
+}
+.vil_right {
+	width: 300px;
+	border: 1px solid #f4f4f4;
+	padding-bottom: 10px;
+}
+.vli_title {
+	width: 290px;
+	background: #f2f2f2;
+	height: 30px;
+	text-align: left;
+	line-height: 30px;
+	font-size: 12px;
+	padding-left: 10px;
+	font-weight: bold;
+}
+.vhot_list {
+	width: 285px;
+	height: 400px;
+	margin-left: 13px;
+}
+.vhot_list ul {
+	width: 285px;
+	height: 400px;
+}
+.vhot_list ul li {
+	margin-top: 20px;
+	width: 285px;
+	height: 60px;
+	font-size: 12px;
+	line-height: 20px;
+}
+.vhot_list ul li .img {
+	float: left;
+	margin-right: 5px;
+}
+.vhot_list ul li a, .vhot_list ul li a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.vhot_list ul li a:hover, .vhot_list ul li a:active {
+	color: #666;
+	text-decoration: underline;
+}
+.vhot_list ul li span {
+	color: #666;
+}

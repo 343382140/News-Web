@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>管理采集规则</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li class="current"><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+
+<table class="tb tb2 nobdb">
+<tbody>
+<tr>
+<td colspan="4">
+<div style="margin:8px 1px;">			
+
+<a href="?export_rule=yes" class="addtr" style="background-position:-286px -150px">导出所有采集规则</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:if(confirm('清空所有')){window.location.href='?clears_all_rule=yes';}" class="addtr" style="background-position-y:-286px">清空所有</a>
+
+</div>
+</td>
+</tr>
+
+<tr class="header">
+<th>ID</th>
+<th>采集规则名称</th>
+<th>规则说明</th>
+<th>-</th>	
+</tr>
+
+<?php while($arr = $db->GetArray("hzw")) {  ?> 
+<tr class="hover">
+<td><?php echo $arr['ID'];?></td>
+<td><?php echo $arr['rule_name'];?></td>
+<td><?php echo $arr['rule_remark'];?></td>
+<td>
+<a href="?modifyRuleId=<?php echo $arr['ID'];?>">修改</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="?deleteRuleId=<?php echo $arr['ID'];?>">删除</a>
+</td>
+</tr>
+<?php } ?>
+		
+</tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<a class="readMore" href="list.php?tid=[field:id /]">·µ»ØÀ¸Ä¿&gt;&gt;</a>

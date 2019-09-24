@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{dede:field.seotitle/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="/m/style/css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+{dede:include filename="head_m.htm"/}
+
+<!-- 元素开始 -->
+<div id="tabBox2" class="tabBox">
+  <div class="hd">
+    <h2>当前位置：{dede:field name='position'/}</h2> 
+  </div>
+  <div class="bd">
+      <ul>
+        {dede:list pagesize='20'}
+        <li><a href="view.php?aid=[field:id/]" title="[field:title /]">[field:title /]</a></li>
+        {/dede:list}
+      </ul>
+  </div>
+</div>
+
+<div class="pages">
+ <ul>{dede:pagelist listitem="index,end,pre,next" listsize="3"/}</ul>
+</div>
+{dede:include filename="foot_m.htm"/}
+</body>
+</html>

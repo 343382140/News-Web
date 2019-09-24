@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>伪原创</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li class="current"><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+
+  <form name="cpform" method="post" autocomplete="off" action="?modify_submit=yes" id="cpform" >
+  <input type="hidden" name="zhiwu" id="zhiwu" />
+  <input type="hidden" name="ID" value="<?php echo $_GET["modify_id"]; ?>" />
+  <table class="tb tb2" style="width:auto">
+    <tbody>
+      <tr class="header">
+        <th>原始词语</th>
+        <th>同义词替换词语</th>
+        <th>&nbsp;</th>
+      </tr>
+    <tr>
+      <td><input type="text" class="txt" name="word1" style="width:250px;margin-right:50px" value="<?php echo $modify_rs['word1']; ?>"></td>
+      <td><input type="text" class="txt" name="word2" style="width:250px;margin-right:50px" value="<?php echo $modify_rs['word2']; ?>"></td>
+      <td>
+      	<input type="submit" class="btn" value="修改" />
+      </td>
+    </tr>
+    </tbody>    
+  </table>
+</form>
+
+
+  
+</div>
+<script>
+document.getElementById('zhiwu').value="http://" + window.location.host;
+</script>
+</body>
+</html>

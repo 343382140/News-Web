@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>回收站</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li class="current"><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+  
+<div style="margin:32px;">
+
+<?php if($csdn123_arr["isok"]=='yes') { ?>
+
+  <div style="color:#F00;font-weight:bold;font-size:14px;margin-bottom:30px;"> <?php echo $csdn123_arr["info"]; ?> <br><br></div>
+  <div> <strong>正式版： v9.3</strong><br><br><br></div>
+  <div> <strong>最后更新时间： 2018年3月3日 </strong><br><br><br></div>
+  <div> 官方QQ群： 235307918<br><br><br></div>
+  <div> 客服QQ： 155120699<br><br><br></div>
+  <div> 邮箱： 155120699@qq.com<br><br><br></div>
+  <div> 官方网站： <a href="http://www.csdn123.net/" target="_blank">http://www.csdn123.net/</a><br><br><br></div>
+  <div style="line-height:24px;margin-top:32px;font-weight:bold;width:80%;"><p>&nbsp;&nbsp;</p>重要提示：为了感恩已购买授权的用户，本插件的授权有效期为终身，也就是可以永久使用，不会收取续费！！但这个插件需要成本，如何解决成本问题？只有解决成本问题插件才能长久运作下去，现在已购买用户不用交续费了，那只能通过新购买的用户来解决成本问题，希望已经购买插件的用户能自发多点宣传这个插件，让更多的用户来购买，这样插件才能活下去！！如果已购买授权的用户不用交续费并且又没有新用户购买，没有资金支付这个插件正常运作的费用，那这个插件就会没落，最终死掉！！这个插件未来的命运需要您的支持和帮助，感谢有您！！</div>
+  
+<?php } else { ?>
+
+<div style="font-size:14px;line-height:18px;margin-bottom:30px;"> <?php echo $csdn123_arr["info"]; ?> </div>
+
+<?php } ?>
+</div>  
+  
+</div>
+</body>
+</html>

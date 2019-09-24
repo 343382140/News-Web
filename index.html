@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<TITLE></TITLE>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="order by dede58.com" />
+<link href="/style/index.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/style/jquery.min.js"></script>
+<script src="/style/jquery.lazyload.js" type="text/javascript"></script>
+<script type="text/javascript" src="/style/focus.js"></script>
+<script src="/style/thinkhover.js"></script>
+<meta http-equiv="mobile-agent" content="format=xhtml;url=http://www.xn--ehv81oxn1a8lb.cn//m/index.php">
+<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://www.xn--ehv81oxn1a8lb.cn//m/index.php";}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+<!--[if IE 6]><script src="/style/iepng.js" type="text/javascript"></script><script type="text/javascript">EvPNG.fix('div, ul, img, li, input');</script><![endif]-->
+<script type="text/javascript">
+        var curIndex = 0;
+        var fcTimer;
+        $(function(){
+            $('.yema li').eq(curIndex).attr("class","cur");
+            $('.fc_pics .pica').eq(curIndex).css({"display":"block"});
+            fcTimer = setInterval("focusDo.indexChange()",3000);
+            $('.fc_pics').hover(function(){
+                clearInterval(fcTimer);
+            },function(){
+                fcTimer = setInterval("focusDo.indexChange()",3000);
+            });
+            $('.fc_pics .yema li').hover(function(){
+                var cIndex = $(this).index();
+                focusDo.cntShow(cIndex);
+                curIndex = cIndex;
+            },function(){});
+            $('.fc_pics .pre').click(function(){
+                curIndex -= 1;
+                if(curIndex < 0){
+                    curIndex = 4;
+                }
+                focusDo.cntShow(curIndex);
+            });
+            $('.fc_pics .nxt').click(function(){
+                curIndex += 1;
+                if(curIndex >=5){
+                    curIndex = 0;
+                }
+                focusDo.cntShow(curIndex);
+            });
+        });
+        var focusDo = {
+            cntShow : function(cIndex){
+                $('.fc_pics .pica').css({"display":"none"});
+                $('.fc_pics .pica').eq(cIndex).css({"display":"block"});
+                $('.fc_pics .yema li').removeClass();
+                $('.fc_pics .yema li').eq(cIndex).attr("class","cur");
+            },
+            indexChange : function(){
+                curIndex += 1;
+                if(curIndex == 5){
+                    curIndex = 0;
+                }
+                this.cntShow(curIndex);
+            }
+        };
+    </script>
+<script type="text/javascript">
+var showeffect = ""; 
+{showeffect = "fadeIn"} 
+jQuery(document).ready(function($) { 
+$("img").lazyload({ 
+placeholder: "/style/grey.gif", 
+effect: showeffect, 
+failurelimit: 10 
+}) 
+});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".guanbi").click(function(){
+  $(".adg").fadeOut(100);
+  });
+});
+</script>
+
+<div class="head">
+  <div id="top">
+    <div id="topleft">
+      <ul>
+        <li><a href="http://www.xn--ehv81oxn1a8lb.cn/" target="_blank" class="tengxun">腾讯微博</a></li>
+        <li><a href="http://www.xn--ehv81oxn1a8lb.cn/" target="_blank" rel="nofollow" class="xinlang">新浪微博</a></li>
+        <li><a href="#" class="rss" target="_blank">网站地图</a></li>
+        <li><a href="/m" target="_blank" class="phone">手机站</a></li>
+      </ul>
+    </div>
+    <div id="topright" data-unuse="1">
+      <ul>
+        <li><a href="/tags.php" target="_blank">TAG标签</a></li>
+        <li style="border-right: none;"><a href="http://www.xn--ehv81oxn1a8lb.cn//help/" target="_blank">帮助</a></li>
+        <li style="border-right: none; display:none;"><a id="StranLink">繁体版</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="tip">
+  <h2><a href="/" title=" "><img src="/style/logo.png" alt=""/></a></h2>
+  <div class="sub_logo">
+    <p>重点新闻 * 以人为本 * 关注民生</p>
+    <div class="tianqi">
+      <iframe width="280" scrolling="no" height="22" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=1&icon=1&wind=0&num=1"></iframe>
+    </div>
+  </div>
+  <div class="tip_r">
+    <div class="search">
+      <form action="/plus/search.php" name="formsearch">
+        <input type="hidden" name="kwtype" value="0" />
+        <input type="text"  name="q" value="请输入关键词" class="s_w" onblur="if (this.value ==&#39;&#39;){this.value=this.defaultValue}" onclick="if(this.value==&#39;请输入关键词&#39;)this.value=&#39;&#39;"/>
+        <input type="submit" name="submit" value="提 交" class='an' style="border:0"/>
+      </form>
+    </div>
+    <div class="tag"><b>热门关键词：</b>　</div>
+  </div>
+</div>
+<div class="m">
+  <div class="menu"> <span class="nava"></span>
+    <ul class="naval">
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//zixun/" ><b>资讯</b></a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//world/">国际</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//domestic/">国内</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//politics/">社会</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//reping/">热评</a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//focus/" ><b>关注</b></a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//jiaoyu/">教育</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//tiyu/">体育</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//wangluo/">电影</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//mil/">军事</a></li>
+    </ul>
+    <span class="navb"></span>
+    <ul class="naval">
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//caijing/" ><b>财经</b></a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//gupiao/">股票</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//licai/">理财</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//minsheng/">基金</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//yinhang/">金融</a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//keji/" ><b>科技</b></a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//keji/yena/">互联网</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//keji/shuju/">数据</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//keji/shuma/">数码</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//keji/shouji/">手机</a></li>
+    </ul>
+    <span class="navc"></span>
+    <ul class="naval">
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/" ><b>汽车</b></a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/xinche/">新车</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/daogou/">导购</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/hangqing/">行情</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/yanghu/">行业</a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//housenews/" ><b>房产</b></a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//dongtai/">动态</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//jiancai/">家居</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//qushi/">行情</a></li><li><a href="http://www.xn--ehv81oxn1a8lb.cn//shichang/">市场</a></li>
+    </ul>
+    <span class="navd"></span>
+    <ul class="navbl">
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//photos/" >图片</a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/" >全国</a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn//video/" >视频</a></li>
+      <li><a href="http://www.xn--ehv81oxn1a8lb.cn/" target="_blank">论坛</a></li>
+    </ul>
+  </div>
+</div>
+<div class="gd">
+  <div class="gdc"> <b>城市：</b> <a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/beijing/">北京</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/tianjin/">天津</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hebei/">河北</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shanxi/">山西</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/liaoning/">辽宁</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jilin/">吉林</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shanghai/">上海</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jiangsu/">江苏</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/zhejiang/">浙江</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/anhui/">安徽</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/fujian/">福建</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jiangxi/">江西</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shandong/">山东</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/henan/">河南</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hubei/">湖北</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hunan/">湖南</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/guangdong/">广东</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/guangxi/">广西</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hainan/">海南</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/zhongqing/">重庆</a>
+    <a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/" class="more">更多</a> </div>
+</div>
+
+<div id="top-ad">
+  <ul>
+    <li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2559.html" title="美国迈阿密一过街天桥坍塌：">美国迈阿密一过街天桥坍塌：</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2488.html" title="首艘国产航母脚手架拆除完毕 ">首艘国产航母脚手架拆除完毕 </a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2489.html" title="每一位保家卫国的勇士，都不">每一位保家卫国的勇士，都不</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2481.html" title="IBM再次超越谷歌：研制出50量">IBM再次超越谷歌：研制出50量</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2480.html" title="中国互联网的五百公里碑石">中国互联网的五百公里碑石</a></li>
+
+    <li class="last"><a href="/" target="_blank">广而告之 联系QQ：XXXXXXXXX</a></li>
+  </ul>
+  <div style="width:1000px;height:90px;"><a href="/"><img src="/style/ad3.jpg" /></a></div>
+  <ul>
+    <li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2605.html" title="榆林市榆阳区政府包庇村官，">榆林市榆阳区政府包庇村官，</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2607.html" title="超限站违规放车  陕西府谷交">超限站违规放车  陕西府谷交</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2600.html" title="李嘉诚抛售内地资产真相 李嘉">李嘉诚抛售内地资产真相 李嘉</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2579.html" title="北京除夕扩散条件转差 初一最">北京除夕扩散条件转差 初一最</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2488.html" title="首艘国产航母脚手架拆除完毕 ">首艘国产航母脚手架拆除完毕 </a></li>
+
+    <li class="last"><a href="/" target="_blank">广而告之 联系QQ：XXXXXXXXX</a></li>
+  </ul>
+</div>
+<div class="jrtt">
+  <div class="toutiao"></div>
+  <a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2398.html" title="保亭红毛丹亮相金砖国家峰会成会议指定水果">
+  <h2>保亭红毛丹亮相金砖国家峰会成会议指定水果</h2>
+  </a>
+
+  <ul>
+    <li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2374.html" title="“景区+乡村”形成叠加效应汝城：村寨">“景区+乡村”形成叠加效应汝城：村寨</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2337.html" title="下周济南步步升温 最高可到25℃">下周济南步步升温 最高可到25℃</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2331.html" title="习近平总书记到山东代表团参加审议">习近平总书记到山东代表团参加审议</a></li>
+
+  </ul>
+</div>
+<div class="box1">
+  <div class="box1_l">
+    <div class="fc_pics"> <a class="pre" href="javascript:void(0);"></a> <a class="nxt" href="javascript:void(0);"></a>
+      <ul class="yema">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="pica"> <a class="pica_link" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2605.html" title='榆林市榆阳区政府包庇村官，村民投诉无果'><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180320/1-1P320091622624-lp.jpg" width="330" height="220"  alt="榆林市榆阳区政府包庇村官，村民投诉无果" /></a> <a class="pica_title" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2605.html" title="榆林市榆阳区政府包庇村官，村民投诉无果">榆林市榆阳区政府包庇村官，村民投诉无果</a> </div>
+<div class="pica"> <a class="pica_link" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2607.html" title='超限站违规放车  陕西府谷交通监管被指严重缺位'><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180320/3-1P320134953521-lp.jpg" width="330" height="220"  alt="超限站违规放车  陕西府谷交通监管被指严重缺位" /></a> <a class="pica_title" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2607.html" title="超限站违规放车  陕西府谷交通监管被指严重缺位">超限站违规放车  陕西府谷交通监管被指严重缺位</a> </div>
+<div class="pica"> <a class="pica_link" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2579.html" title='北京除夕扩散条件转差 初一最高气温可达8℃'><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180318/093J42646_lit.jpg" width="330" height="220"  alt="北京除夕扩散条件转差 初一最高气温可达8℃" /></a> <a class="pica_title" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2579.html" title="北京除夕扩散条件转差 初一最高气温可达8℃">北京除夕扩散条件转差 初一最高气温可达8℃</a> </div>
+<div class="pica"> <a class="pica_link" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2538.html" title='人大代表建议：以“卫温”命名首艘国产航母'><img src="http://www.xn--ehv81oxn1a8lb.cn//images/defaultpic.gif" width="330" height="220"  alt="人大代表建议：以“卫温”命名首艘国产航母" /></a> <a class="pica_title" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2538.html" title="人大代表建议：以“卫温”命名首艘国产航母">人大代表建议：以“卫温”命名首艘国产航母</a> </div>
+<div class="pica"> <a class="pica_link" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2509.html" title='央视快评：党心所向 民心所盼 众望所归'><img src="http://www.xn--ehv81oxn1a8lb.cn//images/defaultpic.gif" width="330" height="220"  alt="央视快评：党心所向 民心所盼 众望所归" /></a> <a class="pica_title" href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2509.html" title="央视快评：党心所向 民心所盼 众望所归">央视快评：党心所向 民心所盼 众望所归</a> </div>
+ </div>
+    <div class="yplist"> <li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2559.html" title='美国迈阿密一过街天桥坍塌：八车被压桥下 已致6人死亡'>美国迈阿密一过街天桥坍塌：八车被压桥下 已致6人死亡</a></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2488.html" title='首艘国产航母脚手架拆除完毕 试航在即'>首艘国产航母脚手架拆除完毕 试航在即</a></li>
+ </div>
+    <div class="ypimg"> <li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2488.html" title='首艘国产航母脚手架拆除完毕 试航在即'><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180317/1-1P31G45I4-lp.jpg"  ></a><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2488.html" title='首艘国产航母脚手架拆除完毕 试航在即'>首艘国产航母脚手架拆除完毕 试航在即</a></span></li>
+<li><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2489.html" title='每一位保家卫国的勇士，都不会被遗忘！'><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180317/1-1P31G52411-lp.jpg"  ></a><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2489.html" title='每一位保家卫国的勇士，都不会被遗忘！'>每一位保家卫国的勇士，都不会被遗忘！</a></span></li>
+ </div>
+  </div>
+  <div class="box1_c">
+    <div class="ilistl_t clear">
+      <ul id="MB">
+        <li class="active" onmouseover="ThinkOver(this,0);">资讯</li>
+        <li class="normal" onmouseover="ThinkOver(this,1);">关注</li>
+        <li class="normal" onmouseover="ThinkOver(this,2);">科技</li>
+        <li class="normal" onmouseover="ThinkOver(this,3);">财经</li>
+      </ul>
+    </div>
+    <div class="ilist" id="MBC0"> <ul class="ilist_top">
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1813.html" target="_blank"><b>武汉小学世奥赛换“马甲”：数万学生参加，考一场被取</b></a> <span>武汉小学世奥赛换“马甲”：数万学生参加，考一场被取消...<a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1813.html" target="_blank"><font>[详情]</font></a></span>
+      </ul>
+
+      <ul class="ilist_c">
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2605.html" title="榆林市榆阳区政府包庇村官，村民投诉无果">榆林市榆阳区政府包庇村官，村民投诉无果</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2607.html" title="超限站违规放车  陕西府谷交通监管被指严重缺">超限站违规放车  陕西府谷交通监管被指严重缺</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2600.html" title="李嘉诚抛售内地资产真相 李嘉诚离开中国很聪">李嘉诚抛售内地资产真相 李嘉诚离开中国很聪</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2559.html" title="美国迈阿密一过街天桥坍塌：八车被压桥下 已">美国迈阿密一过街天桥坍塌：八车被压桥下 已</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2558.html" title="希腊海岛难民攻击警察 至少8人负伤">希腊海岛难民攻击警察 至少8人负伤</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2557.html" title="一架美国军用直升机在叙利亚边境附近坠毁 有">一架美国军用直升机在叙利亚边境附近坠毁 有</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2554.html" title="英剑桥市长：是否为霍金举行公开悼念和葬礼将">英剑桥市长：是否为霍金举行公开悼念和葬礼将</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2553.html" title="辩论发言被打断，俄罗斯女总统候选人哭了">辩论发言被打断，俄罗斯女总统候选人哭了</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2552.html" title="美国一人行天桥坍塌 中领馆：暂无中国公民伤">美国一人行天桥坍塌 中领馆：暂无中国公民伤</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2551.html" title="韩媒：韩检方或下周初决定是否提请法院逮捕李">韩媒：韩检方或下周初决定是否提请法院逮捕李</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2550.html" title="文在寅同安倍就半岛局势通电话：美日韩须紧密">文在寅同安倍就半岛局势通电话：美日韩须紧密</a></span></li>
+
+      </ul>
+    </div>
+    <div class="ilist none" id="MBC1"> <ul class="ilist_top">
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1842.html" target="_blank"><b>中国一款“八轮怪兽”曝光 坦克越野突击没它寸步难行</b></a> <span>近日，有网友在道路上和一列样貌陌生的军用卡车车队相遇。不同于凸头的一汽解放MV3和...<a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1842.html" target="_blank"><font>[详情]</font></a></span>
+      </ul>
+
+      <ul class="ilist_c">
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2575.html" title="笑笑西卡重回解说席 骚话连篇全场爆笑不断">笑笑西卡重回解说席 骚话连篇全场爆笑不断</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2572.html" title="“复仇者联盟”来袭 五少侠只剩马哥还未完成">“复仇者联盟”来袭 五少侠只剩马哥还未完成</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2568.html" title="万幸！韩天宇伤情无大碍 或退出短道世锦赛争">万幸！韩天宇伤情无大碍 或退出短道世锦赛争</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2564.html" title="MotoGP卡塔尔：泽科打破十年纪录夺杆 雅马哈">MotoGP卡塔尔：泽科打破十年纪录夺杆 雅马哈</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2562.html" title="张海迪：首金为2022年北京冬残奥会奠定良好基">张海迪：首金为2022年北京冬残奥会奠定良好基</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2561.html" title="EDG的上单有毒！Ray也成了抗压王 真是体系问">EDG的上单有毒！Ray也成了抗压王 真是体系问</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2087.html" title="全英赛张楠/刘成0-2落败 世锦赛冠军遭一轮游">全英赛张楠/刘成0-2落败 世锦赛冠军遭一轮游</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2086.html" title="两大实力韩援同场比拼 MaRin全方位碾压Ray">两大实力韩援同场比拼 MaRin全方位碾压Ray</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2085.html" title="冬残奥会轮椅冰壶 中国8胜1负提前晋级四强">冬残奥会轮椅冰壶 中国8胜1负提前晋级四强</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2084.html" title="Martin小炮疯狂输出夺四杀 VG开门红拿下首局">Martin小炮疯狂输出夺四杀 VG开门红拿下首局</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2083.html" title="国际汽联主席：车手使用Halo座舱保护不守信用">国际汽联主席：车手使用Halo座舱保护不守信用</a></span></li>
+
+      </ul>
+    </div>
+    <div class="ilist none" id="MBC2"> <ul class="ilist_top">
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1856.html" target="_blank"><b>真假难辩 Google手机谍照网上初现</b></a> <span>真假难辩 Google手机谍照网上初现...<a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1856.html" target="_blank"><font>[详情]</font></a></span>
+      </ul>
+
+      <ul class="ilist_c">
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1785.html" title="传Netflix欲制作时事新闻节目挑战《60分钟》">传Netflix欲制作时事新闻节目挑战《60分钟》</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2485.html" title="手机配件行业倒闭潮或是产业转型的阵痛">手机配件行业倒闭潮或是产业转型的阵痛</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2484.html" title="腾讯系"全家桶"：投资那些公司的总市值比腾讯">腾讯系"全家桶"：投资那些公司的总市值比腾讯</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2483.html" title="爱奇艺近3年每年巨亏超25亿，凭什么拿下超600">爱奇艺近3年每年巨亏超25亿，凭什么拿下超600</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2482.html" title="15英寸Surface Book 2开启预售，19888元起售">15英寸Surface Book 2开启预售，19888元起售</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2481.html" title="IBM再次超越谷歌：研制出50量子位计算机原型">IBM再次超越谷歌：研制出50量子位计算机原型</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2480.html" title="中国互联网的五百公里碑石">中国互联网的五百公里碑石</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2479.html" title="思科第四财季营收121.33亿美元 净利24.24亿美">思科第四财季营收121.33亿美元 净利24.24亿美</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2478.html" title="IBM任命新CFO，传年内要裁员1万人">IBM任命新CFO，传年内要裁员1万人</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2477.html" title="外媒：IBM营收或将停止下滑，但发展颓势仍难">外媒：IBM营收或将停止下滑，但发展颓势仍难</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2476.html" title="万达云服务多部门解散?回应称与IBM合作仍正常">万达云服务多部门解散?回应称与IBM合作仍正常</a></span></li>
+
+      </ul>
+    </div>
+    <div class="ilist none" id="MBC3"> 
+      <ul class="ilist_c">
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1909.html" title="深交所总经理：全面修订公司法 明晰资管产品">深交所总经理：全面修订公司法 明晰资管产品</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1908.html" title="一线｜中国比特币全节点超过德国 跃居全球第">一线｜中国比特币全节点超过德国 跃居全球第</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1907.html" title="银监会支持银行补血工具创新：拓宽发行渠道，">银监会支持银行补血工具创新：拓宽发行渠道，</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1906.html" title="证监会投保局局长赵敏：对CDR相关的投资者保">证监会投保局局长赵敏：对CDR相关的投资者保</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1905.html" title="新华社：重大违法退市新规亮相 能否激活A股“">新华社：重大违法退市新规亮相 能否激活A股“</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1904.html" title="一线|银监会：进一步支持商业银行资本工具创">一线|银监会：进一步支持商业银行资本工具创</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1903.html" title="一线|中国比特币全节点超过德国 跃居全球第二">一线|中国比特币全节点超过德国 跃居全球第二</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1902.html" title="证监会投保局赵敏：对CDR相关的投资者保护也">证监会投保局赵敏：对CDR相关的投资者保护也</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1901.html" title="证监会：目前已经在发行、退市等环节嵌入投保">证监会：目前已经在发行、退市等环节嵌入投保</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1900.html" title="农业银行千亿定增只是开始 银行补充资本短期">农业银行千亿定增只是开始 银行补充资本短期</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1899.html" title="陈道富：银保监管合并有利于有效统筹协调金融">陈道富：银保监管合并有利于有效统筹协调金融</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="box1_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>热评</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//reping/"><span>更多</span></a></div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1997.html" title="在火锅店专访爱豆？网易《明星零距离">在火锅店专访爱豆？网易《明星零距离</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1996.html" title="《第三届“诚信北京”3.15晚会》全媒">《第三届“诚信北京”3.15晚会》全媒</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1995.html" title="200万人次一起“重返这五年”，网易新">200万人次一起“重返这五年”，网易新</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1994.html" title="“搞机”新方式 网易科技直播邀你“易">“搞机”新方式 网易科技直播邀你“易</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1993.html" title="2017诚信北京315启动啦">2017诚信北京315启动啦</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1992.html" title="吃自己的狗粮，做高傲的孤狼">吃自己的狗粮，做高傲的孤狼</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1991.html" title="网易传媒举办“闻学社沙龙” 探讨新闻">网易传媒举办“闻学社沙龙” 探讨新闻</a></span></li>
+
+      </ul>
+      <div class="box1_rlist_ad1"><a href="/" target="_blank"><img src="/style/ad1.jpg" height="60"/></a></div>
+
+    </div>
+  </div>
+</div>
+<div class="adimg">
+  <div id="focus">
+    <ul>
+      <li><a href="#" target="_blank"><img src="/style/ad3.jpg" /></a></li>
+<li><a href="#" target="_blank"><img src="/style/ad33.png" /></a></li>
+    </ul>
+  </div>
+</div>
+<div class="box2">
+  <div class="box2_l">
+    <div class="box2_list">
+      <div class="box2_listt">
+        <h3>资讯</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//zixun/"><span>更多</span></a></div>
+      
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2605.html" title="榆林市榆阳区政府包庇村官，村民">榆林市榆阳区政府包庇村官，村民</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2607.html" title="超限站违规放车  陕西府谷交通监">超限站违规放车  陕西府谷交通监</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2600.html" title="李嘉诚抛售内地资产真相 李嘉诚">李嘉诚抛售内地资产真相 李嘉诚</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2558.html" title="希腊海岛难民攻击警察 至少8人负">希腊海岛难民攻击警察 至少8人负</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2557.html" title="一架美国军用直升机在叙利亚边境">一架美国军用直升机在叙利亚边境</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2554.html" title="英剑桥市长：是否为霍金举行公开">英剑桥市长：是否为霍金举行公开</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2553.html" title="辩论发言被打断，俄罗斯女总统候">辩论发言被打断，俄罗斯女总统候</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="box2_c">
+    <div class="box2_list">
+      <div class="box2_listt">
+        <h3>关注</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//focus/"><span>更多</span></a></div>
+      
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2575.html" title="笑笑西卡重回解说席 骚话连篇全场爆笑">笑笑西卡重回解说席 骚话连篇全场爆笑</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2572.html" title="“复仇者联盟”来袭 五少侠只剩马哥还">“复仇者联盟”来袭 五少侠只剩马哥还</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2568.html" title="万幸！韩天宇伤情无大碍 或退出短道世">万幸！韩天宇伤情无大碍 或退出短道世</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2564.html" title="MotoGP卡塔尔：泽科打破十年纪录夺杆 ">MotoGP卡塔尔：泽科打破十年纪录夺杆 </a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2562.html" title="张海迪：首金为2022年北京冬残奥会奠">张海迪：首金为2022年北京冬残奥会奠</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2561.html" title="EDG的上单有毒！Ray也成了抗压王 真是">EDG的上单有毒！Ray也成了抗压王 真是</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2087.html" title="全英赛张楠/刘成0-2落败 世锦赛冠军遭">全英赛张楠/刘成0-2落败 世锦赛冠军遭</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="box2_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>国际</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//world/"><span>更多</span></a></div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2559.html" title="美国迈阿密一过街天桥坍塌：八车被压">美国迈阿密一过街天桥坍塌：八车被压</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2558.html" title="希腊海岛难民攻击警察 至少8人负伤">希腊海岛难民攻击警察 至少8人负伤</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2557.html" title="一架美国军用直升机在叙利亚边境附近">一架美国军用直升机在叙利亚边境附近</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2554.html" title="英剑桥市长：是否为霍金举行公开悼念">英剑桥市长：是否为霍金举行公开悼念</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2553.html" title="辩论发言被打断，俄罗斯女总统候选人">辩论发言被打断，俄罗斯女总统候选人</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2552.html" title="美国一人行天桥坍塌 中领馆：暂无中国">美国一人行天桥坍塌 中领馆：暂无中国</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2551.html" title="韩媒：韩检方或下周初决定是否提请法">韩媒：韩检方或下周初决定是否提请法</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2550.html" title="文在寅同安倍就半岛局势通电话：美日">文在寅同安倍就半岛局势通电话：美日</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2549.html" title="俄流亡商人伦敦家中离奇死亡 英警方以">俄流亡商人伦敦家中离奇死亡 英警方以</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2548.html" title="韩美领导人通话讨论半岛局势 文在寅再">韩美领导人通话讨论半岛局势 文在寅再</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box3">
+  <div class="lanmu_title">
+    <h3>全国新闻</h3>
+    <div class="sub_lanmu"> <a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/beijing/">北京</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/tianjin/">天津</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hebei/">河北</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shanxi/">山西</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/liaoning/">辽宁</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jilin/">吉林</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shanghai/">上海</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jiangsu/">江苏</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/zhejiang/">浙江</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/anhui/">安徽</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/fujian/">福建</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jiangxi/">江西</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shandong/">山东</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/henan/">河南</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hubei/">湖北</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hunan/">湖南</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/guangdong/">广东</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/guangxi/">广西</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hainan/">海南</a><a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/zhongqing/">重庆</a> </div>
+    <span class="lanmu_more"> <a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/">更多</a></span> </div>
+  <div class="box3_c"> <dl>
+      <dt><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2579.html" title="北京除夕扩散条件转差 "><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180318/093J42646_lit.jpg" width="140" height="110" alt="北京除夕扩散条件转差 "></a></dt>
+      <dd> <span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2579.html" title="北京除夕扩散条件转差 ">北京除夕扩散条件转差 </a></span>
+        <p>北京除夕扩散条件转差 初一最高气温可达8℃,北京 除夕 多云 初一 爆竹...<a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2579.html" title="北京除夕扩散条件转差 ">[详细]</a></p>
+      </dd>
+    </dl>
+ </div>
+</div>
+<div class="box4">
+  <div class="box2_l">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>科技</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//keji/"><span>更多</span></a></div>
+      <div class="box4_listimg">  </div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1785.html" title="传Netflix欲制作时事新闻节目挑战《60">传Netflix欲制作时事新闻节目挑战《60</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2485.html" title="手机配件行业倒闭潮或是产业转型的阵">手机配件行业倒闭潮或是产业转型的阵</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2484.html" title="腾讯系"全家桶"：投资那些公司的总市">腾讯系"全家桶"：投资那些公司的总市</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2483.html" title="爱奇艺近3年每年巨亏超25亿，凭什么拿">爱奇艺近3年每年巨亏超25亿，凭什么拿</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2482.html" title="15英寸Surface Book 2开启预售，19888">15英寸Surface Book 2开启预售，19888</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="box2_c">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>财经</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//caijing/"><span>更多</span></a></div>
+      <div class="box4_listimg">  </div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1909.html" title="深交所总经理：全面修订公司法 明晰资">深交所总经理：全面修订公司法 明晰资</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1908.html" title="一线｜中国比特币全节点超过德国 跃居">一线｜中国比特币全节点超过德国 跃居</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1907.html" title="银监会支持银行补血工具创新：拓宽发">银监会支持银行补血工具创新：拓宽发</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1906.html" title="证监会投保局局长赵敏：对CDR相关的投">证监会投保局局长赵敏：对CDR相关的投</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1905.html" title="新华社：重大违法退市新规亮相 能否激">新华社：重大违法退市新规亮相 能否激</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="box2_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>数码</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//keji/shuma/"><span>更多</span></a></div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1999.html" title="贾跃亭终于现身：为FF91站台 量产车今年底交付">贾跃亭终于现身：为FF91站台 量产车今年底交付</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-1998.html" title="会议音乐两相宜 捷波朗Speak 710扬声器体验">会议音乐两相宜 捷波朗Speak 710扬声器体验</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box8">
+  <div class="lanmu_title">
+    <h3>视频中心</h3>
+    <div class="sub_lanmu"> <a href="http://www.xn--ehv81oxn1a8lb.cn//video/guonei/">国内视讯</a><a href="http://www.xn--ehv81oxn1a8lb.cn//video/guoji/">国际视讯</a> </div>
+    <span class="lanmu_more"> <a href="http://www.xn--ehv81oxn1a8lb.cn//photonews/junshituku/">更多</a></span> </div>
+  <div class="image_box"> 
+    <!--图片列表项--> 
+     
+    <!--图片列表项结束--> 
+  </div>
+</div>
+<div class="adimg"><a href="/"><img src="/style/ad4.jpg" /></a></div>
+<div class="box4">
+  <div class="box2_l">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>汽车</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/"><span>更多</span></a></div>
+      <div class="box4_listimg"> <p><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2019.html" title="稳坐7座大空间SUV推荐榜 试2018款汉兰达"><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180317/1_031G6191UL5.jpg" /></a><em><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2019.html" title="稳坐7座大空间SUV推荐榜 试2018款汉兰达">稳坐7座大空间SUV推荐榜 试2018款汉兰达</a></em></p>
+<p><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2007.html" title="搭氢燃料电池 雷克萨斯新LS将2019年推出"><img src="http://www.xn--ehv81oxn1a8lb.cn//uploads/allimg/180317/1_031G6095T5Y.jpg" /></a><em><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2007.html" title="搭氢燃料电池 雷克萨斯新LS将2019年推出">搭氢燃料电池 雷克萨斯新LS将2019年推出</a></em></p>
+ </div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2071.html" title="小伙7年攒了30万不买房买房车 以车为">小伙7年攒了30万不买房买房车 以车为</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2070.html" title="应该治 治理车窗抛物的处罚宜严不宜宽">应该治 治理车窗抛物的处罚宜严不宜宽</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2069.html" title="老鼠钻车里6天不出来 车主花千元拆仪">老鼠钻车里6天不出来 车主花千元拆仪</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2068.html" title="2月份新能源汽车 销售环比增长148.2%">2月份新能源汽车 销售环比增长148.2%</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2067.html" title="大众声明:联合开展服务行动 保障车内">大众声明:联合开展服务行动 保障车内</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="box2_c">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>房产</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//housenews/"><span>更多</span></a></div>
+      <div class="box4_listimg">  </div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2463.html" title="南京限购升级：买房3年内限售 购房需">南京限购升级：买房3年内限售 购房需</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2462.html" title="规模时代，平庸是最好姿势">规模时代，平庸是最好姿势</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2461.html" title="一日两地楼市新政 三线城市调控升级">一日两地楼市新政 三线城市调控升级</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2460.html" title="潮白河孔雀城英国宫暂无房源在售具体">潮白河孔雀城英国宫暂无房源在售具体</a></span></li>
+<li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2459.html" title="2018大厂强势逆袭">2018大厂强势逆袭</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="box2_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>导购</h3>
+        <a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/daogou/"><span>更多</span></a></div>
+      <ul>
+        <li><span><a href="http://www.xn--ehv81oxn1a8lb.cn//special/arc-2031.html" title="再领风骚数年 日内瓦看新一代奥迪A6有">再领风骚数年 日内瓦看新一代奥迪A6有</a></span></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box5 clearfix">
+  <div class="lanmu_title">
+    <h3>图库</h3>
+    <div class="sub_lanmu"> <a href="http://www.xn--ehv81oxn1a8lb.cn//mingxingxiezhen/">明星写真</a><a href="http://www.xn--ehv81oxn1a8lb.cn//yulexinwen/">娱乐新闻</a><a href="http://www.xn--ehv81oxn1a8lb.cn//photonews/junshituku/">军事图酷</a> </div>
+    <span class="lanmu_more"> <a href="http://www.xn--ehv81oxn1a8lb.cn//photos/">更多</a></span> </div>
+  <div class="box5l"> 
+     </div>
+  <div class="box5c">  </div>
+  <div class="box5r">  </div>
+</div>
+<div class="clear"></div>
+<div class="adimg"><a href="/"><img src="/style/ad33.jpg" /></a></div>
+<div class="yqlianjie">
+  <div class="city"> <a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/beijing/">北京</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/tianjin/">天津</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hebei/">河北</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shanxi/">山西</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/liaoning/">辽宁</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jilin/">吉林</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shanghai/">上海</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jiangsu/">江苏</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/zhejiang/">浙江</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/anhui/">安徽</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/fujian/">福建</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/jiangxi/">江西</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/shandong/">山东</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/henan/">河南</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hubei/">湖北</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hunan/">湖南</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/guangdong/">广东</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/guangxi/">广西</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/hainan/">海南</a>&nbsp;|&nbsp;<a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/zhongqing/">重庆</a>&nbsp;|&nbsp;
+    <a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/">全国</a> </div>
+  <div class="lianjie">
+    <div class="lianjieleft"><img src="/style/yqlianjie.jpg" alt="友情链接" /></div>
+  </div>
+  <div class="lianjiecontxt"><a href='http://www.baidu.com' target='_blank'>百度资讯</a> <a href='http://www.baidu.com/' target='_blank'>青岛新闻网</a> <a href='http://www.baidu.com' target='_blank'>河北新闻网</a> <a href='http://www.qq.com' target='_blank'>河南新闻网</a> <a href='http://www.baidu.com' target='_blank'>郑州新闻资讯</a> <a href='http://www.baidu.com/' target='_blank'>新闻资讯</a> <a href='http://www.baidu.com/' target='_blank'>百度一下</a> <a href='https://www.dede58.com/' target='_blank'>百度一下</a> </div>
+</div>
+<div class="clear"></div>
+<div class="footerfirst">
+  <div class="footerfirst_main"> <a href="/">首页</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//zixun/" title="资讯" >资讯</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//focus/" title="关注" >关注</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//keji/" title="科技" >科技</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//caijing/" title="财经" >财经</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//qiche/" title="汽车" >汽车</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//housenews/" title="房产" >房产</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//photos/" title="图片" >图片</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//video/" title="视频" >视频</a> 
+    | <a href="http://www.xn--ehv81oxn1a8lb.cn//quanguo/" title="全国" >全国</a>  </div>
+</div>
+<div class="footersecond">
+  <div class="footersecond_main">
+    <div class="footersecond_main_right">
+      <p> 123456789 &#160;技术支持：<a href="http://www.消费时讯.cn/" target="_blank" title="">消费法制网</a> </p>
+      <p><a href="/" target="_blank">电脑版</a> | <a href="/m" target="_blank">移动版</a></p>
+    </div>
+  </div>
+</div>
+<div class="footernew">
+  <ul>
+    <li><a href="#" rel="nofollow" target="_blank"><img src="/style/footernew_pic.jpg"></a></li>
+    <li><a href="#" rel="nofollow" target="_blank"><img src="/style/footernew_pic2.jpg"></a></li>
+    <li><a href="#" rel="nofollow" target="_blank"><img src="/style/footernew_pic3.jpg"></a></li>
+    <li><a href="#" rel="nofollow" target="_blank"><img src="/style/footernew_pic4.jpg"></a></li>
+    <li><a href="#" rel="nofollow" target="_blank"><img src="/style/footernew_pic5.jpg"></a></li>
+    <li><a href="#" rel="nofollow" target="_blank"><img src="/style/footernew_pic6.jpg"></a></li>
+    <li><a href="#" rel="nofollow" target="_blank"><img src="/style/footernew_pic7.jpg"></a></li>
+  </ul>
+</div>
+<!--<div id="goTopBtn"><img src="/style/top.png" width="48"></div>
+<script src="/style/backtop.js" type="text/javascript"></script> 
+<script type="text/javascript">goTopEx();</script> --> 
+
+</body>
+</html>

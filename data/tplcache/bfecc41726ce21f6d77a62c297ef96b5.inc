@@ -1,0 +1,1 @@
+<a class="nl_m_p1" href="[field:arcurl/]" title='[field:title /]'> <img src="[field:litpic/]" alt="[field:title /]" width="275" height="160" /> <span>[field:title /]</span> </a>

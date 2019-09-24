@@ -1,0 +1,1 @@
+<div class="new_lanmu_rimga"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]"></a><a href="[field:arcurl/]" title="[field:title /]"><span>[field:title /]</span></a></div>

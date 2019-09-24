@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{dede:field name="title"/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="/m/style/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/m/style/js/jquery1.42.min.js"></script>
+<script>
+ $(function(){
+     $("#dhmore").toggle(function(){
+	  // $("#daohang_ul").animate({height:"90px"},0);
+	  // $("#navlayer").slideDown("slow");
+	   $("#navlayer").show("slow");
+	 },function(){
+	   //$("#daohang_ul").animate({height:"30px"},0);
+	  // $("#navlayer").slideUp("slow");
+	   $("#navlayer").hide("slow");
+	 })
+
+  });
+</script>
+</head>
+
+<body>
+{dede:include filename="n_head_m.htm"/}
+ 
+<main>
+  <section> 
+  <h3 class="headNew pa">{dede:field name="title"/}</h3>
+  <article class="pd10">
+  <div class="info">发布时间:<time>{dede:field name='pubdate' function='GetDateMk(@me)'/}</time>&nbsp;&nbsp;浏览: <script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script> 次&nbsp;&nbsp;作者:{dede:field name='writer' /}</div>
+  
+  <div class="content">
+    <p>{dede:field name='body'/}</p>
+  </div>
+  <div class="page"><ul>{dede:pagebreak/}</ul></div>
+  </article>
+  </section>
+</main>
+<div class="share">
+{dede:include filename="share_m.htm"/}
+</div>
+<div class="clear"></div>
+<div class="tabBox">
+  <div class="hd"><h2>相关文章<span>Related</span></h2></div>
+  <div class="bd">
+    <div class="con">
+      <ul>
+        {dede:likearticle row='5' titlelen='80'}
+        <li><a href="view.php?aid=[field:id/]" title="[field:title /]">[field:title /]</a></li>
+        {/dede:likearticle}
+      </ul>
+    </div>
+  </div>
+</div>
+{dede:type}<a class="readMore" href="list.php?tid=[field:id/]">返回栏目&gt;&gt;</a>{/dede:type}
+<div class="clear"></div>
+<div id="SOHUCS"></div>
+<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
+	src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrhc68T6&conf=prod_5830c86e2e9ffc5ca00dda09e7a10298">
+</script>
+<style type="text/css">
+#goTopBtn{bottom:50px}
+</style>
+{dede:include filename="foot_m.htm"/}
+
+</body>
+</html>

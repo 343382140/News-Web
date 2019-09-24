@@ -1,0 +1,1 @@
+<a href="list.php?tid=[field:id/]"><img src="/m/style/images/arrow_l.png" alt="·µ»ØÀ¸Ä¿" height="22"></a>

@@ -1,0 +1,67 @@
+<div class="conr PB10">
+  <div class="lad l">
+   {dede:myad name='arc1'/}
+  </div>
+  <div class="lbt_timg">
+    <ul>
+    {dede:arclist titlelen='35' row='4' flag='p,h' typeid='all'}
+     <li><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]"></a><a href="[field:arcurl/]" title="[field:title /]"><span>[field:title /]</span></a></li>
+    {/dede:arclist} 
+    </ul>
+   </div>
+  <div class="info_right">
+    <div class="info_right_tit">
+      <ul  id="Show2">
+        <li class="active" onmouseover="ThinkOver(this,0);"><a href="#" target="_blank" title="">资讯</a></li>
+        <li class="normal" onmouseover="ThinkOver(this,1);"><a href="#" target="_blank" title="">关注</a></li>
+        <li class="normal" onmouseover="ThinkOver(this,2);"><a href="#" target="_blank" title="">图片</a></li>
+      </ul>
+    </div>
+  <div class="info"  id="Show2C0">
+   {dede:arclist titlelen='36'  limit='0,1' typeid='50' type='image' orderby='click' }
+   <div class="info_hot"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]" /></a><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]...</a><br/>浏览次数：<b>[field:click/]次</b></span></div>
+   {/dede:arclist}
+   <div class="info_right_list">
+    {dede:arclist titlelen='45' typeid='50'  limit='1,9' orderby='click' }
+      <a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a><p>浏览:[field:click/]次</P>
+    {/dede:arclist}
+    </div>
+   </div>
+  <div class="info"  style="display:none" id="Show2C1">
+   {dede:arclist titlelen='36'  typeid='108' limit='0,1' type='image'  orderby='click' }
+   <div class="info_hot"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]" /></a><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]...</a><br/>浏览次数：<b>[field:click/]次</b></span></div>
+   {/dede:arclist}
+   <div class="info_right_list">
+    {dede:arclist titlelen='45'  typeid='108' limit='1,9' orderby='click' }
+      <a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a><p>浏览:[field:click/]次</P>
+    {/dede:arclist}
+    </div>
+   </div>
+  <div class="info"  style="display:none" id="Show2C2">
+   {dede:arclist titlelen='36'   typeid='5' limit='0,1' type='image' orderby='click' }
+   <div class="info_hot"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]" /></a><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]...</a><br/>浏览次数：<b>[field:click/]次</b></span></div>
+   {/dede:arclist}
+    <div class="info_right_list">
+    {dede:arclist titlelen='45' typeid='5' limit='1,9' orderby='click' }
+      <a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a><p>浏览:[field:click/]次</P>
+    {/dede:arclist}
+    </div>
+   </div>
+  </div>
+  <!--<div class="lad PB10 PT10 l">
+   {dede:myad name='arc2'/}
+  </div>
+  -->
+  <div class="llb">
+  <h2>最火资讯</h2>
+  <div class="llb_ul col888 a_000">
+<ul>
+{dede:arclist titlelen='36' row='3' typeid='all' flag='c'}
+<li class="paihang[field:global name=autoindex/]"><a class="b" href="[field:arcurl/]" title="[field:title /]">[field:title /]</a><br>[field:description function="cn_substr(@me,70)"/]...</li>
+{/dede:arclist} 
+{dede:arclist titlelen='36' row='8' typeid='all'}
+<li class="llb_list">&middot;<a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></li>
+{/dede:arclist} 
+</ul></div>
+  </div>
+ </div>

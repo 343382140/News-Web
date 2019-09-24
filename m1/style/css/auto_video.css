@@ -1,0 +1,38 @@
+/************************************************************************************
+正常屏幕
+*************************************************************************************/
+.auto_video {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+}
+ @media screen and (max-width:1190px) {
+.auto_video {
+	height: 400px;
+	margin: 0 auto;
+	display: block;
+}
+}
+ @media screen and (max-width:1920px) {
+.auto_video {
+	height: 600px;
+	margin: 0 auto;
+	display: block;
+}
+}
+
+/************************************************************************************
+屏幕小于650px
+*************************************************************************************/
+@media screen and (max-width:650px) {
+.auto_video {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	height: 300px;
+}
+.auto_video object {
+	height: 300px
+}
+}

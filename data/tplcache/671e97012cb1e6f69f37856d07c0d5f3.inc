@@ -1,0 +1,1 @@
+{dede:charset}gb2312{/dede:charset}{dede:list}http://world.gmw.cn/node_4661.htm{/dede:list}{dede:page}http://world.gmw.cn/2018-03/14/content_27980222.htm{/dede:page}{dede:titlerule}<title>[ÄÚÈİ]</title>{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div id="contentMain">[ÄÚÈİ]</div>{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}

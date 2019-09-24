@@ -1,0 +1,1 @@
+{dede:charset}gb2312{/dede:charset}{dede:list}http://house.ifeng.com/{/dede:list}{dede:page}http://house.ifeng.com/detail/(*)/(*)_0.shtml{/dede:page}{dede:titlerule}<title>[内容]！ ——凤凰网房产北京</title>{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="article">[内容]</div>{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}

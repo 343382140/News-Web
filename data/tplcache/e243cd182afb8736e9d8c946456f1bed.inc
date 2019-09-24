@@ -1,0 +1,1 @@
+<h3><a href="list.php?tid=[field:id/]" >[field:typename /]</a><span>News</span></h3>

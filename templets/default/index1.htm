@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<TITLE>{dede:global.cfg_webname/}</TITLE>
+<meta name="keywords" content="{dede:global.cfg_keywords/}">
+<meta name="description" content="{dede:global.cfg_description/}">
+<meta name="author" content="order by dede58.com" />
+<link href="/style/index.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/style/jquery.min.js"></script>
+<script src="/style/jquery.lazyload.js" type="text/javascript"></script>
+<script type="text/javascript" src="/style/focus.js"></script>
+<script src="/style/thinkhover.js"></script>
+<meta http-equiv="mobile-agent" content="format=xhtml;url={dede:global.cfg_mobileurl/}/index.php">
+<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="{dede:global.cfg_mobileurl/}/index.php";}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+<!--[if IE 6]><script src="/style/iepng.js" type="text/javascript"></script><script type="text/javascript">EvPNG.fix('div, ul, img, li, input');</script><![endif]-->
+<script type="text/javascript">
+        var curIndex = 0;
+        var fcTimer;
+        $(function(){
+            $('.yema li').eq(curIndex).attr("class","cur");
+            $('.fc_pics .pica').eq(curIndex).css({"display":"block"});
+            fcTimer = setInterval("focusDo.indexChange()",3000);
+            $('.fc_pics').hover(function(){
+                clearInterval(fcTimer);
+            },function(){
+                fcTimer = setInterval("focusDo.indexChange()",3000);
+            });
+            $('.fc_pics .yema li').hover(function(){
+                var cIndex = $(this).index();
+                focusDo.cntShow(cIndex);
+                curIndex = cIndex;
+            },function(){});
+            $('.fc_pics .pre').click(function(){
+                curIndex -= 1;
+                if(curIndex < 0){
+                    curIndex = 4;
+                }
+                focusDo.cntShow(curIndex);
+            });
+            $('.fc_pics .nxt').click(function(){
+                curIndex += 1;
+                if(curIndex >=5){
+                    curIndex = 0;
+                }
+                focusDo.cntShow(curIndex);
+            });
+        });
+        var focusDo = {
+            cntShow : function(cIndex){
+                $('.fc_pics .pica').css({"display":"none"});
+                $('.fc_pics .pica').eq(cIndex).css({"display":"block"});
+                $('.fc_pics .yema li').removeClass();
+                $('.fc_pics .yema li').eq(cIndex).attr("class","cur");
+            },
+            indexChange : function(){
+                curIndex += 1;
+                if(curIndex == 5){
+                    curIndex = 0;
+                }
+                this.cntShow(curIndex);
+            }
+        };
+    </script>
+<script type="text/javascript">
+var showeffect = ""; 
+{showeffect = "fadeIn"} 
+jQuery(document).ready(function($) { 
+$("img").lazyload({ 
+placeholder: "/style/grey.gif", 
+effect: showeffect, 
+failurelimit: 10 
+}) 
+});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".guanbi").click(function(){
+  $(".adg").fadeOut(100);
+  });
+});
+</script>
+<div class="adtop adg">{dede:myad name='indexad0'/}</div>
+{dede:include filename="head.htm"/}
+<div id="top-ad">
+  <ul>
+    {dede:arclist titlelen='27' row='5' typeid='all' flag='c'}
+    <li><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></li>
+    {/dede:arclist}
+    <li class="last">{dede:myad name='首页导航下文字链接一'/}</li>
+  </ul>
+  <div style="width:1000px;height:90px;">{dede:myad name='indexlogo'/}</div>
+  <ul>
+    {dede:arclist titlelen='27' row='5' typeid='all' flag='p'}
+    <li><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></li>
+    {/dede:arclist}
+    <li class="last">{dede:myad name='首页导航下文字链接二'/}</li>
+  </ul>
+</div>
+<div class="jrtt">
+  <div class="toutiao"></div>
+  {dede:arclist titlelen='55' row='1' typeid='all' flag='a' limit='0,1'} <a href="[field:arcurl/]" title="[field:title /]">
+  <h2>[field:title /]</h2>
+  </a> {/dede:arclist}
+  <ul>
+    {dede:arclist titlelen='35' row='5' typeid='all' flag='a' limit='1,3'}
+    <li><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></li>
+    {/dede:arclist}
+  </ul>
+</div>
+<div class="box1">
+  <div class="box1_l">
+    <div class="fc_pics"> <a class="pre" href="javascript:void(0);"></a> <a class="nxt" href="javascript:void(0);"></a>
+      <ul class="yema">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      {dede:arclist titlelen='50' row='5' typeid='all' flag='i'}
+      <div class="pica"> <a class="pica_link" href="[field:arcurl/]" title='[field:title /]'><img src="[field:litpic/]" width="330" height="220"  alt="[field:title /]" /></a> <a class="pica_title" href="[field:arcurl/]" title="[field:title /]">[field:title /]</a> </div>
+      {/dede:arclist} </div>
+    <div class="yplist"> {dede:arclist titlelen='50' row='2' typeid='all' flag='c'}
+      <li><a href="[field:arcurl/]" title='[field:title /]'>[field:title /]</a></li>
+      {/dede:arclist} </div>
+    <div class="ypimg"> {dede:arclist titlelen='50' row='2' typeid='all' flag='c,p'}
+      <li><a href="[field:arcurl/]" title='[field:title /]'><img src="[field:litpic/]"  ></a><span><a href="[field:arcurl/]" title='[field:title /]'>[field:title /]</a></span></li>
+      {/dede:arclist} </div>
+  </div>
+  <div class="box1_c">
+    <div class="ilistl_t clear">
+      <ul id="MB">
+        <li class="active" onmouseover="ThinkOver(this,0);">资讯</li>
+        <li class="normal" onmouseover="ThinkOver(this,1);">关注</li>
+        <li class="normal" onmouseover="ThinkOver(this,2);">科技</li>
+        <li class="normal" onmouseover="ThinkOver(this,3);">财经</li>
+      </ul>
+    </div>
+    <div class="ilist" id="MBC0"> {dede:arclist titlelen='50' row='1' typeid='50' flag='a'}
+      <ul class="ilist_top">
+        <a href="[field:arcurl/]" target="_blank"><b>[field:title /]</b></a> <span>[field:description function="cn_substr(@me,80)"/]...<a href="[field:arcurl/]" target="_blank"><font>[详情]</font></a></span>
+      </ul>
+      {/dede:arclist}
+      <ul class="ilist_c">
+        {dede:arclist titlelen='42' row='11' typeid='50'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+    <div class="ilist none" id="MBC1"> {dede:arclist titlelen='50' row='1' typeid='108' flag='a'}
+      <ul class="ilist_top">
+        <a href="[field:arcurl/]" target="_blank"><b>[field:title /]</b></a> <span>[field:description function="cn_substr(@me,80)"/]...<a href="[field:arcurl/]" target="_blank"><font>[详情]</font></a></span>
+      </ul>
+      {/dede:arclist}
+      <ul class="ilist_c">
+        {dede:arclist titlelen='42' row='11' typeid='108'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+    <div class="ilist none" id="MBC2"> {dede:arclist titlelen='50' row='1' typeid='76' flag='a'}
+      <ul class="ilist_top">
+        <a href="[field:arcurl/]" target="_blank"><b>[field:title /]</b></a> <span>[field:description function="cn_substr(@me,80)"/]...<a href="[field:arcurl/]" target="_blank"><font>[详情]</font></a></span>
+      </ul>
+      {/dede:arclist}
+      <ul class="ilist_c">
+        {dede:arclist titlelen='42' row='11' typeid='76'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+    <div class="ilist none" id="MBC3"> {dede:arclist titlelen='50' row='1' typeid='55' flag='a'}
+      <ul class="ilist_top">
+        <a href="[field:arcurl/]" target="_blank"><b>[field:title /]</b></a> <span>[field:description function="cn_substr(@me,80)"/]...<a href="[field:arcurl/]" target="_blank"><font>[详情]</font></a></span>
+      </ul>
+      {/dede:arclist}
+      <ul class="ilist_c">
+        {dede:arclist titlelen='42' row='11' typeid='55'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+  <div class="box1_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>热评</h3>
+        <a href="{dede:type typeid='131'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <ul>
+        {dede:arclist titlelen='35' row='7' typeid='131'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+      <div class="box1_rlist_ad1">{dede:myad name='indexad1'/}</div>
+      <div class="box1_rlist_ad1">{dede:myad name='indexad2'/}</div>
+    </div>
+  </div>
+</div>
+<div class="adimg">
+  <div id="focus">
+    <ul>
+      {dede:myad name='indexad3'/}
+    </ul>
+  </div>
+</div>
+<div class="box2">
+  <div class="box2_l">
+    <div class="box2_list">
+      <div class="box2_listt">
+        <h3>资讯</h3>
+        <a href="{dede:type typeid='50'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      {dede:arclist titlelen='30' row='1' typeid='50' flag='c,p'}
+      <dl>
+        <dt><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]" /></a>
+        <dd><a href="[field:arcurl/]" title="[field:title /]"><font>[field:title /]</font></a><br />
+          <a href="[field:arcurl/]" title="[field:title /]">[field:description function="cn_substr(@me,60)"/]</a></dd>
+        </dt>
+      </dl>
+      {/dede:arclist}
+      <ul>
+        {dede:arclist titlelen='30' row='7' typeid='50' noflag='c'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+  <div class="box2_c">
+    <div class="box2_list">
+      <div class="box2_listt">
+        <h3>关注</h3>
+        <a href="{dede:type typeid='108'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      {dede:arclist titlelen='30' row='1' typeid='108' flag='c,p'}
+      <dl>
+        <dt><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]" /></a>
+        <dd><a href="[field:arcurl/]" title="[field:title /]"><font>[field:title /]</font></a><br />
+          <a href="[field:arcurl/]" title="[field:title /]">[field:description function="cn_substr(@me,60)"/]</a></dd>
+        </dt>
+      </dl>
+      {/dede:arclist}
+      <ul>
+        {dede:arclist titlelen='35' row='7' typeid='108' noflag='c'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+  <div class="box2_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>国际</h3>
+        <a href="{dede:type typeid='51'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <ul>
+        {dede:arclist titlelen='35' row='10' typeid='51'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box3">
+  <div class="lanmu_title">
+    <h3>全国新闻</h3>
+    <div class="sub_lanmu"> {dede:channelartlist typeid='109' row='20'}<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>{/dede:channelartlist} </div>
+    <span class="lanmu_more"> <a href="{dede:type typeid='109'}[field:typelink /]{/dede:type}">更多</a></span> </div>
+  <div class="box3_c"> {dede:arclist titlelen='22' row='6' typeid='109' flag='p'}
+    <dl>
+      <dt><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" width="140" height="110" alt="[field:title /]"></a></dt>
+      <dd> <span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span>
+        <p>[field:description function="cn_substr(@me,70)"/]...<a href="[field:arcurl/]" title="[field:title /]">[详细]</a></p>
+      </dd>
+    </dl>
+    {/dede:arclist} </div>
+</div>
+<div class="box4">
+  <div class="box2_l">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>科技</h3>
+        <a href="{dede:type typeid='76'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <div class="box4_listimg"> {dede:arclist titlelen='55' row='2' typeid='76' flag='p'}
+        <p><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" /></a><em><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></em></p>
+        {/dede:arclist} </div>
+      <ul>
+        {dede:arclist titlelen='35' row='5' typeid='76' noflag='p'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+  <div class="box2_c">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>财经</h3>
+        <a href="{dede:type typeid='55'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <div class="box4_listimg"> {dede:arclist titlelen='55' row='2' typeid='55' flag='p'}
+        <p><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" /></a><em><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></em></p>
+        {/dede:arclist} </div>
+      <ul>
+        {dede:arclist titlelen='35' row='5' typeid='55' noflag='p'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+  <div class="box2_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>数码</h3>
+        <a href="{dede:type typeid='79'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <ul>
+        {dede:arclist titlelen='45' row='12' typeid='79'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box8">
+  <div class="lanmu_title">
+    <h3>视频中心</h3>
+    <div class="sub_lanmu"> {dede:channelartlist typeid='132' row='10'}<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>{/dede:channelartlist} </div>
+    <span class="lanmu_more"> <a href="{dede:type typeid='61'}[field:typelink /]{/dede:type}">更多</a></span> </div>
+  <div class="image_box"> 
+    <!--图片列表项--> 
+    {dede:arclist titlelen='30' row='5' typeid='132'}
+    <div class="image_box_item"> <a href="[field:arcurl/]" title='[field:title /]'> <img src="[field:litpic/]" width="190" height="130" /> </a> <a href="[field:arcurl/]" title='[field:title /]'>[field:title /]</a> </div>
+    {/dede:arclist} 
+    <!--图片列表项结束--> 
+  </div>
+</div>
+<div class="adimg">{dede:myad name='indexad4'/}</div>
+<div class="box4">
+  <div class="box2_l">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>汽车</h3>
+        <a href="{dede:type typeid='81'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <div class="box4_listimg"> {dede:arclist titlelen='55' row='2' typeid='81' flag='p'}
+        <p><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" /></a><em><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></em></p>
+        {/dede:arclist} </div>
+      <ul>
+        {dede:arclist titlelen='35' row='5' typeid='81' noflag='p'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+  <div class="box2_c">
+    <div class="box4_list">
+      <div class="box2_listt">
+        <h3>房产</h3>
+        <a href="{dede:type typeid='8'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <div class="box4_listimg"> {dede:arclist titlelen='55' row='2' typeid='8' flag='p'}
+        <p><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]" /></a><em><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></em></p>
+        {/dede:arclist} </div>
+      <ul>
+        {dede:arclist titlelen='35' row='5' typeid='8' noflag='p'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+  <div class="box2_r">
+    <div class="box1_rlist">
+      <div class="box1_rlistt">
+        <h3>导购</h3>
+        <a href="{dede:type typeid='83'}[field:typelink /]{/dede:type}"><span>更多</span></a></div>
+      <ul>
+        {dede:arclist titlelen='35' row='12' typeid='83'}
+        <li><span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box5 clearfix">
+  <div class="lanmu_title">
+    <h3>图库</h3>
+    <div class="sub_lanmu"> {dede:channelartlist typeid='5' row='10'}<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>{/dede:channelartlist} </div>
+    <span class="lanmu_more"> <a href="{dede:type typeid='5'}[field:typelink /]{/dede:type}">更多</a></span> </div>
+  <div class="box5l"> {dede:arclist titlelen='55' row='1' typeid='43,44' flag='p,c' limit='0,1'}
+    <li class="box6"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]"/></a><a href="[field:arcurl/]" title="[field:title /]"><span>[field:title /]</span></a></li>
+    {/dede:arclist}
+    {dede:arclist titlelen='35' row='2' typeid='43,44' flag='p,c' limit='1,2'}
+    <li class="box7"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]"/></a><a href="[field:arcurl/]" title="[field:title /]"><span>[field:title /]</span></a></li>
+    {/dede:arclist} </div>
+  <div class="box5c"> {dede:arclist titlelen='35' row='2' typeid='43,44' flag='p,c' limit='3,3'}
+    <li><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]"/></a><a href="[field:arcurl/]" title="[field:title /]"><span>[field:title /]</span></a></li>
+    {/dede:arclist} </div>
+  <div class="box5r"> {dede:arclist titlelen='18' row='5' typeid='5' noflag='c' flag='p'}
+    <dl>
+      <dt><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]"  alt="[field:title /]"></a></dt>
+      <dd> <span><a href="[field:arcurl/]" title="[field:title /]">[field:title /]</a></span>
+        <p>[field:description function="cn_substr(@me,25)"/]...</p>
+      </dd>
+    </dl>
+    {/dede:arclist} </div>
+</div>
+<div class="clear"></div>
+<div class="adimg">{dede:myad name='indexad5'/}</div>
+<div class="yqlianjie">
+  <div class="city"> {dede:channelartlist typeid='109' row='35'} <a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>&nbsp;|&nbsp;
+    {/dede:channelartlist}
+    {dede:type typeid='109' }<a href="[field:typelink /]">全国</a>{/dede:type} </div>
+  <div class="lianjie">
+    <div class="lianjieleft"><img src="/style/yqlianjie.jpg" alt="友情链接" /></div>
+  </div>
+  <div class="lianjiecontxt">{dede:flink row='24' type='text' titlelen='26' linktype = '2' typeid='1'}[field:link /]{/dede:flink}</div>
+</div>
+{dede:include filename="foot.htm"/}
+</body>
+</html>

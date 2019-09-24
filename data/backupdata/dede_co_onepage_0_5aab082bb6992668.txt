@@ -1,0 +1,1 @@
+INSERT INTO `dede_co_onepage` VALUES('1','http://jhsjk.people.cn/','ÈËÃñÍø','1','utf-8','{@body}');

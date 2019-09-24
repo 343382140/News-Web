@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>我的网站</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link href="/m/style/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/m/style/js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="/m/style/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/m/style/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="/m/style/js/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="/m/style/js/swipe.js"></script>
+<script>
+ $(function(){
+     $("#dhmore").toggle(function(){
+	  // $("#daohang_ul").animate({height:"90px"},0);
+	  // $("#navlayer").slideDown("slow");
+	   $("#navlayer").show("slow");
+	 },function(){
+	   //$("#daohang_ul").animate({height:"30px"},0);
+	  // $("#navlayer").slideUp("slow");
+	   $("#navlayer").hide("slow");
+	 })
+
+  });
+</script>
+</head>
+
+<body>
+<div class="content_top">
+  <div class="arrowl"><a href="/m"><img src="/m/style/images/home.png" alt="首页" height="22"></a></div>
+  <div class="context">新闻门户网</div>
+  <div class="arrowr"><a href="#" class="more" id="dhmore"><img src="/m/style/images/more.png" height="23"></a></div>
+</div>
+<div class="cnsnav">
+  <div class="navlayer" id="navlayer">
+    <div class="cnsnav">
+      <ul id="">
+        <li class="selimg"><a href="/m/">首页</a></li>
+        
+        <li><a href="list.php?tid=50">资讯</a></li>
+       
+        <li><a href="list.php?tid=108">关注</a></li>
+       
+        <li><a href="list.php?tid=76">科技</a></li>
+       
+        <li><a href="list.php?tid=55">财经</a></li>
+       
+        <li><a href="list.php?tid=81">汽车</a></li>
+       
+        <li><a href="list.php?tid=8">房产</a></li>
+       
+        <li><a href="list.php?tid=5">图片</a></li>
+       
+        <li><a href="list.php?tid=132">视频</a></li>
+       
+        <li><a href="list.php?tid=109">全国</a></li>
+       
+      </ul>
+    </div>
+  </div>
+</div>
+<header>
+  <nav>
+  <a target="_blank" href="/m">首页</a>
+  <a href="list.php?tid=50" >资讯</a>
+  <a href="list.php?tid=108" >关注</a>
+  <a href="list.php?tid=76" >科技</a>
+  <a href="list.php?tid=55" >财经</a>
+  <a href="list.php?tid=81" >汽车</a>
+  <a href="list.php?tid=5" >图片</a>
+  <a href="list.php?tid=132" >视频</a>
+  </nav>
+</header>
+<!-- 头条 -->
+<h3 class="headNew"><a href="view.php?aid=1692" title="新郎接亲遇堵门掌掴小姨子 新娘选择离">新郎接亲遇堵门掌掴小姨子 新娘选择离</a></h3>
+<h5 class="subNew">湖北新郎张先生去接亲，要进新娘闺房时，伴娘（新娘的妹妹）不肯...<a href="view.php?aid=1692">[更多]</a></h5>
+
+
+<!-- 焦点图 -->
+<div class="imgSwipeMain">
+  <div id="slider" class="swipe">
+    <div class="swipe-wrap swiper-wrapper">
+       <div class="image swiper-slide" style="background:url(/uploads/allimg/160504/1-160504202J6-lp.jpg) center no-repeat;background-size: cover;"> <a href="view.php?aid=1689" target="_blank"></a>
+        <div class="title">
+          <p>魏则西案涉事武警二院：保安用雨伞挡大门</p>
+        </div>
+      </div>
+<div class="image swiper-slide" style="background:url(/uploads/allimg/160504/1-160504204506-lp.jpg) center no-repeat;background-size: cover;"> <a href="view.php?aid=1693" target="_blank"></a>
+        <div class="title">
+          <p>孟非请鲁豫去自家餐馆吃面 两人相谈甚欢</p>
+        </div>
+      </div>
+<div class="image swiper-slide" style="background:url(/uploads/allimg/160504/1-1605042041220-L.jpg) center no-repeat;background-size: cover;"> <a href="view.php?aid=1692" target="_blank"></a>
+        <div class="title">
+          <p>新郎接亲遇堵门掌掴小姨子 新娘选择离婚</p>
+        </div>
+      </div>
+<div class="image swiper-slide" style="background:url(/uploads/allimg/160504/1-1605042036230-L.jpg) center no-repeat;background-size: cover;"> <a href="view.php?aid=1691" target="_blank"></a>
+        <div class="title">
+          <p>深扒！旅游节目不会告诉你的事</p>
+        </div>
+      </div>
+<div class="image swiper-slide" style="background:url(/style/60b6a1bfaa822a0de253e347fa53f35f.jpg) center no-repeat;background-size: cover;"> <a href="view.php?aid=1570" target="_blank"></a>
+        <div class="title">
+          <p>艺术课同时纳入中考考试科目</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="position"></div>
+</div>
+
+<!-- Tab切换（高度自适应示范） -->
+<div id="tabBox1" class="tabBox">
+  <div class="hd">
+    <h3><a href="list.php?tid=50" >资讯</a><span>News</span></h3>
+    <ul>
+      <li><a href="javascript:void(0)">国际</a></li><li><a href="javascript:void(0)">国内</a></li><li><a href="javascript:void(0)">时局</a></li><li><a href="javascript:void(0)">热评</a></li>
+    </ul>
+  </div>
+  <div class="bd" id="tabBox1-bd">
+   <div class="con">
+      <!-- 高度自适应需添加外层 -->
+      <ul>
+        <li><a href="view.php?aid=1464" title="老人地铁上拍醒熟睡女孩索要座位：快起来">老人地铁上拍醒熟睡女孩索要座位：快起来</a></li>
+<li><a href="view.php?aid=1478" title="爸爸醉酒路边 两岁萌宝贴心守护">爸爸醉酒路边 两岁萌宝贴心守护</a></li>
+<li><a href="view.php?aid=1481" title="长假年损二千亿 应取消长假">长假年损二千亿 应取消长假</a></li>
+<li><a href="view.php?aid=1479" title="扫地大爷伦敦腔 常用英语为人指路">扫地大爷伦敦腔 常用英语为人指路</a></li>
+<li><a href="view.php?aid=1580" title="韩宪法法院裁定《禁止青少年深夜玩网游》合">韩宪法法院裁定《禁止青少年深夜玩网游》合</a></li>
+<li><a href="view.php?aid=1579" title="奥巴马将访马来西亚 一当地青年相貌与其酷">奥巴马将访马来西亚 一当地青年相貌与其酷</a></li>
+<li><a href="view.php?aid=1578" title="奥巴马很好色一直在偷情 婚姻已破裂">奥巴马很好色一直在偷情 婚姻已破裂</a></li>
+
+      </ul>
+    </div><div class="con">
+      <!-- 高度自适应需添加外层 -->
+      <ul>
+        <li><a href="view.php?aid=1469" title="一男子过安检开玩笑称有炸弹 被调查并罚款">一男子过安检开玩笑称有炸弹 被调查并罚款</a></li>
+<li><a href="view.php?aid=1582" title="四川城乡居民基本养老保险制度统一后咋计算">四川城乡居民基本养老保险制度统一后咋计算</a></li>
+<li><a href="view.php?aid=1583" title="《舌尖》馋倒外国网友：一顿饭后房租减半">《舌尖》馋倒外国网友：一顿饭后房租减半</a></li>
+<li><a href="view.php?aid=1581" title="云南小学生乘废弃渔船游湖 船只沉没致六人">云南小学生乘废弃渔船游湖 船只沉没致六人</a></li>
+<li><a href="view.php?aid=1467" title="中国妈妈澳洲登“不逼婚广告”寻子需反思">中国妈妈澳洲登“不逼婚广告”寻子需反思</a></li>
+<li><a href="view.php?aid=1468" title="朋友说好请客却没埋单 男子觉得委屈欲割喉">朋友说好请客却没埋单 男子觉得委屈欲割喉</a></li>
+<li><a href="view.php?aid=1466" title="四个大学生 3天义务为务工人员买票近百张">四个大学生 3天义务为务工人员买票近百张</a></li>
+
+      </ul>
+    </div><div class="con">
+      <!-- 高度自适应需添加外层 -->
+      <ul>
+        <li><a href="view.php?aid=1555" title="国米密会曼联领袖曝光已秘密体检 巨头点名">国米密会曼联领袖曝光已秘密体检 巨头点名</a></li>
+<li><a href="view.php?aid=1472" title="女博士带老妈相亲19次 何时才断奶">女博士带老妈相亲19次 何时才断奶</a></li>
+<li><a href="view.php?aid=1554" title="巴神自曝偶像是大罗与伊布 足球圈外最喜欢">巴神自曝偶像是大罗与伊布 足球圈外最喜欢</a></li>
+<li><a href="view.php?aid=1559" title="面临赛季转折点 打曼联决定命运">面临赛季转折点 打曼联决定命运</a></li>
+<li><a href="view.php?aid=1558" title="维迪奇接近签约国米，已接受初步体检">维迪奇接近签约国米，已接受初步体检</a></li>
+<li><a href="view.php?aid=1557" title="巴西豪门宣布租借米兰前驸马 科林蒂安贴钱">巴西豪门宣布租借米兰前驸马 科林蒂安贴钱</a></li>
+<li><a href="view.php?aid=1556" title="54岁马拉多纳又当爹！ 瞒着妓女女友跟前女">54岁马拉多纳又当爹！ 瞒着妓女女友跟前女</a></li>
+
+      </ul>
+    </div><div class="con">
+      <!-- 高度自适应需添加外层 -->
+      <ul>
+        <li><a href="view.php?aid=1497" title="三孝口人行天桥，今晚告别！（图）">三孝口人行天桥，今晚告别！（图）</a></li>
+<li><a href="view.php?aid=1495" title="安徽省环保厅厅长缪学刚：PM2.5监测站年内">安徽省环保厅厅长缪学刚：PM2.5监测站年内</a></li>
+<li><a href="view.php?aid=1490" title="合肥一公交车发生自燃 浓烟中司机冷静疏散">合肥一公交车发生自燃 浓烟中司机冷静疏散</a></li>
+<li><a href="view.php?aid=1498" title="合肥山湖苑廉租房本月下旬配租">合肥山湖苑廉租房本月下旬配租</a></li>
+<li><a href="view.php?aid=1496" title="合肥市区中考考生4月21至25日体育中考">合肥市区中考考生4月21至25日体育中考</a></li>
+<li><a href="view.php?aid=1501" title="安徽第十届兰花展下周末将在合肥举行">安徽第十届兰花展下周末将在合肥举行</a></li>
+<li><a href="view.php?aid=1500" title="爱心姑娘雪中给失明乞讨老人喂面 让人倍感">爱心姑娘雪中给失明乞讨老人喂面 让人倍感</a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<a class="readMore" href="list.php?tid=50">进入频道&gt;&gt;</a>
+<script type="text/javascript">
+	TouchSlide( { slideCell:"#tabBox1",
+		endFun:function(i){ //高度自适应
+			var bd = document.getElementById("tabBox1-bd");
+			bd.parentNode.style.height = bd.children[i].children[0].offsetHeight+"px";
+			if(i>0)bd.parentNode.style.transition="200ms";//添加动画效果
+		}
+	} );</script>
+<!-- 多图滚动 -->
+<div id="scrollBox" class="scrollBox">
+  <div class="bd">
+    <ul>
+      <li><a class="pic" href="view.php?aid=1689"><img _src="/uploads/allimg/160504/1-160504202J6-lp.jpg" alt="魏则西案涉事武警二院：保安用雨伞挡大门" src="/m/style/images/blank.png" /></a>
+        <p>魏则西案涉事武警二院：保安用雨伞挡大门</p>
+      </li>
+<li><a class="pic" href="view.php?aid=1693"><img _src="/uploads/allimg/160504/1-160504204506-lp.jpg" alt="孟非请鲁豫去自家餐馆吃面 两人相谈甚欢" src="/m/style/images/blank.png" /></a>
+        <p>孟非请鲁豫去自家餐馆吃面 两人相谈甚欢</p>
+      </li>
+
+    </ul>
+    <ul>
+      <li><a class="pic" href="view.php?aid=1692"><img _src="/uploads/allimg/160504/1-1605042041220-L.jpg" alt="新郎接亲遇堵门掌掴小姨子 新娘选择离婚" src="/m/style/images/blank.png" /></a>
+        <p>新郎接亲遇堵门掌掴小姨子 新娘选择离婚</p>
+      </li>
+<li><a class="pic" href="view.php?aid=1691"><img _src="/uploads/allimg/160504/1-1605042036230-L.jpg" alt="深扒！旅游节目不会告诉你的事" src="/m/style/images/blank.png" /></a>
+        <p>深扒！旅游节目不会告诉你的事</p>
+      </li>
+
+    </ul>
+    <ul>
+      <li><a class="pic" href="view.php?aid=1690"><img _src="/uploads/allimg/160504/1-1605042031490-L.jpg" alt="广州“蛇蝎”保姆一审被判死刑 新闻回顾：保姆为" src="/m/style/images/blank.png" /></a>
+        <p>广州“蛇蝎”保姆一审被判死刑 新闻回顾：保姆为</p>
+      </li>
+<li><a class="pic" href="view.php?aid=1686"><img _src="/uploads/allimg/160315/1-1603152320520-L.jpg" alt="手机红包出现多种新骗局" src="/m/style/images/blank.png" /></a>
+        <p>手机红包出现多种新骗局</p>
+      </li>
+
+    </ul>
+  </div>
+  <div class="hd"> <span class="prev"></span>
+    <ul>
+    </ul>
+    <span class="next"></span> </div>
+</div>
+<!-- scrollBox E -->
+<script type="text/javascript">
+		TouchSlide({ 
+			slideCell:"#scrollBox",
+			titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+			effect:"leftLoop", 
+			autoPage:true, //自动分页
+			switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+		});
+</script>
+<!-- Tab切换 -->
+<div id="tabBox2" class="tabBox">
+  <div class="hd">
+    <h3><a href="list.php?tid=108" >关注</a><span>Focus</span></h3>
+    <ul>
+      <li><a href="javascript:void(0)">教育</a></li><li><a href="javascript:void(0)">体育</a></li><li><a href="javascript:void(0)">网络</a></li><li><a href="javascript:void(0)">军事</a></li>
+    </ul>
+  </div>
+  <div class="bd">
+   <ul>
+        <li><a href="view.php?aid=1568" title="学生统一参加军训 成绩将载入学籍">学生统一参加军训 成绩将载入学籍</a></li>
+<li><a href="view.php?aid=1584" title="川民企最年轻＂少帅＂仅19岁 杜葳萱出任得">川民企最年轻＂少帅＂仅19岁 杜葳萱出任得</a></li>
+<li><a href="view.php?aid=1567" title="韩国最帅男教师为救＂岁月＂号客轮学生命丧">韩国最帅男教师为救＂岁月＂号客轮学生命丧</a></li>
+<li><a href="view.php?aid=1566" title="北京小升初取消共建生 暂保留特长生推优生">北京小升初取消共建生 暂保留特长生推优生</a></li>
+<li><a href="view.php?aid=1585" title="水质安全堪忧 治理水污染责任要明处罚要重">水质安全堪忧 治理水污染责任要明处罚要重</a></li>
+<li><a href="view.php?aid=1569" title="青岛6初中亮特长生招收方案 实验初中招36人">青岛6初中亮特长生招收方案 实验初中招36人</a></li>
+<li><a href="view.php?aid=1410" title="以色列称在西奈半岛附近拦截一枚火箭弹">以色列称在西奈半岛附近拦截一枚火箭弹</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1541" title="76人连遭重创吞下七连败 火箭捕狼收获六连">76人连遭重创吞下七连败 火箭捕狼收获六连</a></li>
+<li><a href="view.php?aid=1550" title="赵宏略首次进阿尔滨主力阵容 马林为其讲解">赵宏略首次进阿尔滨主力阵容 马林为其讲解</a></li>
+<li><a href="view.php?aid=1553" title="英格兰征战世界杯新战袍曝光 队徽变天蓝色">英格兰征战世界杯新战袍曝光 队徽变天蓝色</a></li>
+<li><a href="view.php?aid=1552" title="布冯遭悍妻逐家门 皮尔洛情敌收留">布冯遭悍妻逐家门 皮尔洛情敌收留</a></li>
+<li><a href="view.php?aid=1540" title="爵士vs湖人首发：纳什确认出战 卡曼对顶费">爵士vs湖人首发：纳什确认出战 卡曼对顶费</a></li>
+<li><a href="view.php?aid=1551" title="八喜董事长:签的合同有约束力 不强求两强援">八喜董事长:签的合同有约束力 不强求两强援</a></li>
+<li><a href="view.php?aid=1549" title="5巴拉圭球员滞留大连疑被骗 疑似当事人声明">5巴拉圭球员滞留大连疑被骗 疑似当事人声明</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1587" title="负责人离职，谷歌“社交重武器”Google +走">负责人离职，谷歌“社交重武器”Google +走</a></li>
+<li><a href="view.php?aid=1420" title="谁是大佬：移动互联网冲击旧格局 江湖重排">谁是大佬：移动互联网冲击旧格局 江湖重排</a></li>
+<li><a href="view.php?aid=1591" title="Google+发展存疑：主管冈多特拉将离职">Google+发展存疑：主管冈多特拉将离职</a></li>
+<li><a href="view.php?aid=1590" title="饭统网不能饭了陷倒闭疑云">饭统网不能饭了陷倒闭疑云</a></li>
+<li><a href="view.php?aid=1589" title="原酷6副总裁郝志中加盟迅雷看看">原酷6副总裁郝志中加盟迅雷看看</a></li>
+<li><a href="view.php?aid=1588" title="百度一季度净利25.35亿元 同比增24.1%">百度一季度净利25.35亿元 同比增24.1%</a></li>
+<li><a href="view.php?aid=1586" title="中国海军首次组织多国联演 哈尔滨舰担任指">中国海军首次组织多国联演 哈尔滨舰担任指</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1683" title="空警500现身阅兵彩排 机腹细节清晰可见">空警500现身阅兵彩排 机腹细节清晰可见</a></li>
+<li><a href="view.php?aid=1684" title="中国海军轰6云中布雷 战雷可攻击大型战舰">中国海军轰6云中布雷 战雷可攻击大型战舰</a></li>
+<li><a href="view.php?aid=1685" title="中国轰炸机高新机穿越宫古水道遭日方监视">中国轰炸机高新机穿越宫古水道遭日方监视</a></li>
+<li><a href="view.php?aid=1682" title="东风21D击中航母困难重重 中国应研反航母家">东风21D击中航母困难重重 中国应研反航母家</a></li>
+<li><a href="view.php?aid=1681" title="中国买俄拉达级为补核潜艇技术 单壳潜艇不">中国买俄拉达级为补核潜艇技术 单壳潜艇不</a></li>
+<li><a href="view.php?aid=1680" title="乌克兰向中国售核弹巡航导弹 中乌在大飞机">乌克兰向中国售核弹巡航导弹 中乌在大飞机</a></li>
+<li><a href="view.php?aid=1679" title="苏27让中国一跃而成空军强国 歼20还用俄发">苏27让中国一跃而成空军强国 歼20还用俄发</a></li>
+
+      </ul>
+  </div>
+</div>
+<a class="readMore" href="list.php?tid=108">进入频道&gt;&gt;</a>
+<script type="text/javascript">TouchSlide( { slideCell:"#tabBox2" } );</script>
+
+<div class="ad_wap"><a href="/"><img src="/style/wap_ad01.jpg" /></a></div>
+
+<div id="tabBox3" class="tabBox">
+  <div class="hd">
+    <h3><a href="list.php?tid=76" >科技</a><span>Tech</span></h3>
+    <ul>
+      <li><a href="javascript:void(0)">业内</a></li><li><a href="javascript:void(0)">数据</a></li><li><a href="javascript:void(0)">数码</a></li><li><a href="javascript:void(0)">手机</a></li>
+    </ul>
+  </div>
+  <div class="bd">
+   <ul>
+        <li><a href="view.php?aid=1423" title="调查显示春节期间出境游意愿首超跨省游">调查显示春节期间出境游意愿首超跨省游</a></li>
+<li><a href="view.php?aid=1424" title="邹恒甫遭起诉 代理人答辩称北大不享有名誉">邹恒甫遭起诉 代理人答辩称北大不享有名誉</a></li>
+<li><a href="view.php?aid=1574" title="乐居上市首日：收盘价11.86美元 较发行价涨">乐居上市首日：收盘价11.86美元 较发行价涨</a></li>
+<li><a href="view.php?aid=1425" title="大陆游客赴台过春节:部分旅行团元宵节前已">大陆游客赴台过春节:部分旅行团元宵节前已</a></li>
+<li><a href="view.php?aid=1572" title="银监会10号文仅约束银行 中小银行自叹谈判">银监会10号文仅约束银行 中小银行自叹谈判</a></li>
+<li><a href="view.php?aid=1571" title="银监会央行10号文规范银行与支付机构合作">银监会央行10号文规范银行与支付机构合作</a></li>
+<li><a href="view.php?aid=1422" title="国家统计局：2013年四季度GDP同比增长7.7%">国家统计局：2013年四季度GDP同比增长7.7%</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1592" title="这几项未来科技看起来很火，但消费者不感兴">这几项未来科技看起来很火，但消费者不感兴</a></li>
+<li><a href="view.php?aid=1433" title="台湾调整历史课纲去掉“一边一国”色彩用词">台湾调整历史课纲去掉“一边一国”色彩用词</a></li>
+<li><a href="view.php?aid=1434" title="港澳政协委员批内地招商：高兴引进冷淡服务">港澳政协委员批内地招商：高兴引进冷淡服务</a></li>
+<li><a href="view.php?aid=1453" title="曝汪峰个唱要求与章子怡住总统套房 5万一夜">曝汪峰个唱要求与章子怡住总统套房 5万一夜</a></li>
+<li><a href="view.php?aid=1452" title="范冰冰借位热吻李敏镐 网友羡慕嫉妒恨">范冰冰借位热吻李敏镐 网友羡慕嫉妒恨</a></li>
+<li><a href="view.php?aid=1432" title="香港数千外佣游行反对虐佣问题">香港数千外佣游行反对虐佣问题</a></li>
+<li><a href="view.php?aid=1431" title="香港规定公款吃饭最高人均600港元">香港规定公款吃饭最高人均600港元</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1576" title="网上支付还要通过银行身份鉴别 功能进一步">网上支付还要通过银行身份鉴别 功能进一步</a></li>
+<li><a href="view.php?aid=1437" title="美媒称歼-15去年底开始成规模量产 数量超20">美媒称歼-15去年底开始成规模量产 数量超20</a></li>
+<li><a href="view.php?aid=1443" title="中国万吨级海监船获证实 日海保船最大仅700">中国万吨级海监船获证实 日海保船最大仅700</a></li>
+<li><a href="view.php?aid=1577" title="“秘密”App揭秘：因爆料而火 难摆脱负面信">“秘密”App揭秘：因爆料而火 难摆脱负面信</a></li>
+<li><a href="view.php?aid=1575" title="菜鸟网络CEO沈国军卸任 转任公司副董事长">菜鸟网络CEO沈国军卸任 转任公司副董事长</a></li>
+<li><a href="view.php?aid=1442" title="解放军39集团军战斗力堪比百万朝鲜军">解放军39集团军战斗力堪比百万朝鲜军</a></li>
+<li><a href="view.php?aid=1445" title="辽宁舰新一批女兵上舰服役:每天练哑铃强化">辽宁舰新一批女兵上舰服役:每天练哑铃强化</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1503" title="俏江南张兰等企业家扎堆移民小岛国 自称被">俏江南张兰等企业家扎堆移民小岛国 自称被</a></li>
+<li><a href="view.php?aid=1447" title="美侦测到中国导弹轨迹华盛顿愁云惨雾">美侦测到中国导弹轨迹华盛顿愁云惨雾</a></li>
+<li><a href="view.php?aid=1446" title="俄专家鼓吹俄与美日结盟抗华 不做中国附庸">俄专家鼓吹俄与美日结盟抗华 不做中国附庸</a></li>
+<li><a href="view.php?aid=1573" title="IT企业一季度业绩“倒春寒” IBM净利润同比">IT企业一季度业绩“倒春寒” IBM净利润同比</a></li>
+<li><a href="view.php?aid=1502" title="纽约时装周街拍 一场关于外套的战役(图)">纽约时装周街拍 一场关于外套的战役(图)</a></li>
+<li><a href="view.php?aid=1450" title="《爱4》主演忆走红 娄艺潇：本想实习">《爱4》主演忆走红 娄艺潇：本想实习</a></li>
+<li><a href="view.php?aid=1441" title="外媒称建造国产航母是中国海军夙愿 或迎井">外媒称建造国产航母是中国海军夙愿 或迎井</a></li>
+
+      </ul>
+  </div>
+</div>
+<a class="readMore" href="list.php?tid=76">进入频道&gt;&gt;</a>
+<script type="text/javascript">TouchSlide( { slideCell:"#tabBox3" } );</script>
+
+<div id="tabBox4" class="tabBox">
+  <div class="hd">
+    <h3><a href="list.php?tid=55" >财经</a><span>Finance</span></h3>
+    <ul>
+      <li><a href="javascript:void(0)">股票</a></li><li><a href="javascript:void(0)">理财</a></li><li><a href="javascript:void(0)">民生</a></li><li><a href="javascript:void(0)">银行</a></li>
+    </ul>
+  </div>
+  <div class="bd">
+   <ul>
+        <li><a href="view.php?aid=1653" title="关于股票延期复牌的提示性公告">关于股票延期复牌的提示性公告</a></li>
+<li><a href="view.php?aid=1652" title="金道贵金属：伦敦银走势孱弱，不改向下趋势">金道贵金属：伦敦银走势孱弱，不改向下趋势</a></li>
+<li><a href="view.php?aid=1651" title="楼市是在去库存还是仍在增库存">楼市是在去库存还是仍在增库存</a></li>
+<li><a href="view.php?aid=1634" title="内部消息称希腊股市有望周二重开">内部消息称希腊股市有望周二重开</a></li>
+<li><a href="view.php?aid=1633" title="上半年保险业利润大增 保单质押贷款业务增">上半年保险业利润大增 保单质押贷款业务增</a></li>
+<li><a href="view.php?aid=1632" title="田洪良：美元大幅下跌 欧元揭竿而起">田洪良：美元大幅下跌 欧元揭竿而起</a></li>
+<li><a href="view.php?aid=1508" title="美联储预计继续逐步缩减资产购买规模">美联储预计继续逐步缩减资产购买规模</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1639" title="发改委：上半年经济运行处在合理区间">发改委：上半年经济运行处在合理区间</a></li>
+<li><a href="view.php?aid=1638" title="经济增速放缓期仍将持续一段时间">经济增速放缓期仍将持续一段时间</a></li>
+<li><a href="view.php?aid=1637" title="投资项目在线审批平台实现中央部门横向联通">投资项目在线审批平台实现中央部门横向联通</a></li>
+<li><a href="view.php?aid=1636" title="财政部规范中小企业发展专项资金管理">财政部规范中小企业发展专项资金管理</a></li>
+<li><a href="view.php?aid=1635" title="鼓励境外机构成为债市长期投资者">鼓励境外机构成为债市长期投资者</a></li>
+<li><a href="view.php?aid=1513" title="金价续涨 市场静待耶伦证词(图)">金价续涨 市场静待耶伦证词(图)</a></li>
+<li><a href="view.php?aid=1512" title="费率新政引发保险停售潮 险企称不影响产品">费率新政引发保险停售潮 险企称不影响产品</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1645" title="中福在线彩票不能游离监管之外">中福在线彩票不能游离监管之外</a></li>
+<li><a href="view.php?aid=1644" title="激励个人多缴养老金还需减负增收">激励个人多缴养老金还需减负增收</a></li>
+<li><a href="view.php?aid=1643" title="房产税难让房价降下来：房租将会高到吓人">房产税难让房价降下来：房租将会高到吓人</a></li>
+<li><a href="view.php?aid=1642" title="国家队积累过多筹码不利股市">国家队积累过多筹码不利股市</a></li>
+<li><a href="view.php?aid=1641" title="地方债去杠杆关键是政府角色转变">地方债去杠杆关键是政府角色转变</a></li>
+<li><a href="view.php?aid=1640" title="积极推进国际产能和装备制造合作">积极推进国际产能和装备制造合作</a></li>
+<li><a href="view.php?aid=1514" title="今年推养老服务发展综合改革，完善户籍制度">今年推养老服务发展综合改革，完善户籍制度</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1650" title="彩票销售机构负责彩票销售系统的数据管理">彩票销售机构负责彩票销售系统的数据管理</a></li>
+<li><a href="view.php?aid=1649" title="公益福彩更应阳光透明">公益福彩更应阳光透明</a></li>
+<li><a href="view.php?aid=1648" title="面临四大困境：FM类产品能走多远？">面临四大困境：FM类产品能走多远？</a></li>
+<li><a href="view.php?aid=1647" title="新闻早报：新华社记者举报彩票违规">新闻早报：新华社记者举报彩票违规</a></li>
+<li><a href="view.php?aid=1646" title="宋清辉：A股深度回调机会大于风险">宋清辉：A股深度回调机会大于风险</a></li>
+<li><a href="view.php?aid=1521" title="中国增长合预期，消费经济存隐忧">中国增长合预期，消费经济存隐忧</a></li>
+<li><a href="view.php?aid=1520" title="货币政策可能向宽松方向渐进微调">货币政策可能向宽松方向渐进微调</a></li>
+
+      </ul>
+  </div>
+</div>
+<a class="readMore" href="list.php?tid=76">进入频道&gt;&gt;</a>
+<script type="text/javascript">TouchSlide( { slideCell:"#tabBox4" } );</script>
+
+<div id="tabBox5" class="tabBox">
+  <div class="hd">
+    <h3><a href="list.php?tid=81" >汽车</a><span>Finance</span></h3>
+    <ul>
+      <li><a href="javascript:void(0)">新车</a></li><li><a href="javascript:void(0)">导购</a></li><li><a href="javascript:void(0)">行情</a></li><li><a href="javascript:void(0)">养护</a></li>
+    </ul>
+  </div>
+  <div class="bd">
+   <ul>
+        <li><a href="view.php?aid=1628" title="4A91T的1.5T车型的全铝发动机来自于三菱">4A91T的1.5T车型的全铝发动机来自于三菱</a></li>
+<li><a href="view.php?aid=1627" title="大众将联合一汽在佛山造混动车 车展公布规">大众将联合一汽在佛山造混动车 车展公布规</a></li>
+<li><a href="view.php?aid=1626" title="北汽拟投资62亿滨州建项目 签署战略协议">北汽拟投资62亿滨州建项目 签署战略协议</a></li>
+<li><a href="view.php?aid=1598" title="“全球最大的汽车城市展厅”落户广东佛山">“全球最大的汽车城市展厅”落户广东佛山</a></li>
+<li><a href="view.php?aid=1597" title="高新技术产品汇集第二届上交会 特斯拉电动">高新技术产品汇集第二届上交会 特斯拉电动</a></li>
+<li><a href="view.php?aid=1596" title="北京明天第二次买车摇号 申请新能源车十人">北京明天第二次买车摇号 申请新能源车十人</a></li>
+<li><a href="view.php?aid=1595" title="强强联合 腾势电动车竞争力分析">强强联合 腾势电动车竞争力分析</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1605" title="阿斯顿·马丁与奔驰合作开发全尺寸SUV">阿斯顿·马丁与奔驰合作开发全尺寸SUV</a></li>
+<li><a href="view.php?aid=1606" title="世嘉VTS版正式上市 售11.38-13.58万元">世嘉VTS版正式上市 售11.38-13.58万元</a></li>
+<li><a href="view.php?aid=1607" title="DS首款SUV北京车展发布 尾部细节图曝光">DS首款SUV北京车展发布 尾部细节图曝光</a></li>
+<li><a href="view.php?aid=1612" title="2014北京车展：东南V5菱致爵士版首亮相">2014北京车展：东南V5菱致爵士版首亮相</a></li>
+<li><a href="view.php?aid=1611" title="停车位缩水六成 车展外一天“贴条”700多">停车位缩水六成 车展外一天“贴条”700多</a></li>
+<li><a href="view.php?aid=1608" title="卡罗拉领衔 北京车展首发新车前瞻(上)">卡罗拉领衔 北京车展首发新车前瞻(上)</a></li>
+<li><a href="view.php?aid=1604" title="名已改 神未变 试驾一汽马自达阿特兹">名已改 神未变 试驾一汽马自达阿特兹</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1629" title="外观时尚大气，入手2.0T标配白加黑Macan">外观时尚大气，入手2.0T标配白加黑Macan</a></li>
+<li><a href="view.php?aid=1620" title="兰博基尼Aventador SV敞篷车曝光 9月发布">兰博基尼Aventador SV敞篷车曝光 9月发布</a></li>
+<li><a href="view.php?aid=1619" title="雷克萨斯发布2016款IS 将配2.0T发动机">雷克萨斯发布2016款IS 将配2.0T发动机</a></li>
+<li><a href="view.php?aid=1618" title="缤纷盛夏 夏不为利 服务活动开始啦！">缤纷盛夏 夏不为利 服务活动开始啦！</a></li>
+<li><a href="view.php?aid=1617" title="高降幅豪华车领衔本周降价榜 最高降50万">高降幅豪华车领衔本周降价榜 最高降50万</a></li>
+<li><a href="view.php?aid=1615" title="自主品牌季预览 能够PK合资的自主旗舰车型">自主品牌季预览 能够PK合资的自主旗舰车型</a></li>
+<li><a href="view.php?aid=1614" title="倍耐力和国米这一恋就是二十年">倍耐力和国米这一恋就是二十年</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1631" title="潍柴英致七座英致737正式下线 八月底上市">潍柴英致七座英致737正式下线 八月底上市</a></li>
+<li><a href="view.php?aid=1630" title="曝2015款锋驭配置 增1.4T+6AT组合">曝2015款锋驭配置 增1.4T+6AT组合</a></li>
+<li><a href="view.php?aid=1625" title="奥迪新一代S4/RS4动力披露 后者搭电子涡轮">奥迪新一代S4/RS4动力披露 后者搭电子涡轮</a></li>
+<li><a href="view.php?aid=1624" title="特斯拉Model 3 明年登场 性能媲美宝马M3">特斯拉Model 3 明年登场 性能媲美宝马M3</a></li>
+<li><a href="view.php?aid=1623" title="三星新旗舰Galaxy Note 5工程机真机谍照曝">三星新旗舰Galaxy Note 5工程机真机谍照曝</a></li>
+<li><a href="view.php?aid=1622" title="丰田全新Supra跑车效果图 与宝马合作开发">丰田全新Supra跑车效果图 与宝马合作开发</a></li>
+<li><a href="view.php?aid=1621" title="奔驰将推豪华中级皮卡 基于日产平台打造">奔驰将推豪华中级皮卡 基于日产平台打造</a></li>
+
+      </ul>
+  </div>
+</div>
+<a class="readMore" href="list.php?tid=81">进入频道&gt;&gt;</a>
+<script type="text/javascript">TouchSlide( { slideCell:"#tabBox5" } );</script>
+
+<div id="tabBox6" class="tabBox">
+  <div class="hd">
+    <h3><a href="list.php?tid=8" >房产</a><span>Finance</span></h3>
+    <ul>
+      <li><a href="javascript:void(0)">动态</a></li><li><a href="javascript:void(0)">建材</a></li><li><a href="javascript:void(0)">趋势</a></li><li><a href="javascript:void(0)">市场</a></li>
+    </ul>
+  </div>
+  <div class="bd">
+   <ul>
+        <li><a href="view.php?aid=1656" title="今年我国拟淘汰电力行业落后产能423万千瓦">今年我国拟淘汰电力行业落后产能423万千瓦</a></li>
+<li><a href="view.php?aid=1655" title="美股周二小幅高开 等待美联储会议及声明">美股周二小幅高开 等待美联储会议及声明</a></li>
+<li><a href="view.php?aid=1654" title="人民币中间价上调 冲击国际储备货币">人民币中间价上调 冲击国际储备货币</a></li>
+<li><a href="view.php?aid=1356" title="性感美女私房照壁纸">性感美女私房照壁纸</a></li>
+<li><a href="view.php?aid=1610" title="集中在马会家居、美居新生活">集中在马会家居、美居新生活</a></li>
+<li><a href="view.php?aid=1609" title="一季度湖南住宅用地同比上涨32.6% 达2140元">一季度湖南住宅用地同比上涨32.6% 达2140元</a></li>
+<li><a href="view.php?aid=1373" title="《刘诗诗刊》花瓣花瓣">《刘诗诗刊》花瓣花瓣</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1331" title="每日一囧：妹子们玩游戏是有多疯狂">每日一囧：妹子们玩游戏是有多疯狂</a></li>
+<li><a href="view.php?aid=1660" title="批发零售业退市意愿逐年上升">批发零售业退市意愿逐年上升</a></li>
+<li><a href="view.php?aid=1659" title="2015年上半年湖北省房产类外商增资20亿">2015年上半年湖北省房产类外商增资20亿</a></li>
+<li><a href="view.php?aid=1658" title="生活中常有的误区 新房怎样快速除甲醛">生活中常有的误区 新房怎样快速除甲醛</a></li>
+<li><a href="view.php?aid=1657" title="河南城区资源化利用率达到40%">河南城区资源化利用率达到40%</a></li>
+<li><a href="view.php?aid=1333" title="互联网金融：草根平台时代终结">互联网金融：草根平台时代终结</a></li>
+<li><a href="view.php?aid=1329" title="美国原油日产量预估下调10万桶">美国原油日产量预估下调10万桶</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1672" title="广州非保障性住房物业费将逐步放开">广州非保障性住房物业费将逐步放开</a></li>
+<li><a href="view.php?aid=1671" title="投资金牛新机遇 “知名地产企业金牛行”今">投资金牛新机遇 “知名地产企业金牛行”今</a></li>
+<li><a href="view.php?aid=1670" title="司法所设流动调解庭化解纠纷">司法所设流动调解庭化解纠纷</a></li>
+<li><a href="view.php?aid=1669" title="梁卫国：精心组织办好农业产业化盛会">梁卫国：精心组织办好农业产业化盛会</a></li>
+<li><a href="view.php?aid=1334" title="上周合肥一手房均价达9110元/㎡">上周合肥一手房均价达9110元/㎡</a></li>
+<li><a href="view.php?aid=1335" title="股灾对中国富豪有哪些影响？">股灾对中国富豪有哪些影响？</a></li>
+<li><a href="view.php?aid=1662" title="亦庄北京经开壹中心商业预计2015年7月底开">亦庄北京经开壹中心商业预计2015年7月底开</a></li>
+
+      </ul><ul>
+        <li><a href="view.php?aid=1668" title="花洒抽检合格低于80% 卫企需重视质量">花洒抽检合格低于80% 卫企需重视质量</a></li>
+<li><a href="view.php?aid=1667" title="看互联网家装的“代言人暗战”">看互联网家装的“代言人暗战”</a></li>
+<li><a href="view.php?aid=1666" title="卫浴企业迎战一体化市场需求">卫浴企业迎战一体化市场需求</a></li>
+<li><a href="view.php?aid=1665" title="地板行业造假猫腻：抵制伪劣风气需从源头进">地板行业造假猫腻：抵制伪劣风气需从源头进</a></li>
+<li><a href="view.php?aid=1664" title="防水壁纸应运而生 传统材料或将遭淘汰">防水壁纸应运而生 传统材料或将遭淘汰</a></li>
+<li><a href="view.php?aid=1663" title="伊莱克斯一款空气净化器上黑榜">伊莱克斯一款空气净化器上黑榜</a></li>
+<li><a href="view.php?aid=1562" title="房价现“内生性”调整：住建部分类指导楼市">房价现“内生性”调整：住建部分类指导楼市</a></li>
+
+      </ul>
+  </div>
+</div>
+<a class="readMore" href="list.php?tid=8">进入频道&gt;&gt;</a>
+<script type="text/javascript">TouchSlide( { slideCell:"#tabBox6" } );</script>
+<!-- 效果导航 -->
+<div class="effectNav">
+  <h3><a href="/m">首页</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="list.php?tid=60" >帮助</a></h3>
+  <p>Copyright &copy; 2002-2011 DEDECMS. 织梦科技 版权所有 <a href="http://www.dede58.com" target="_blank">Power by DeDe58</a></p>
+</div>
+<div id="goTopBtn"><img src="/m/style/images/top.png" width="30"></div>
+<script src="/m/style/js/top.js" type="text/javascript"></script>
+<script type="text/javascript">goTopEx();</script>
+</body>
+</html>

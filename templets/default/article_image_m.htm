@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{dede:field name="title"/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="/m/style/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/m/style/js/jquery1.42.min.js"></script>
+<script>
+ $(function(){
+     $("#dhmore").toggle(function(){
+	  // $("#daohang_ul").animate({height:"90px"},0);
+	  // $("#navlayer").slideDown("slow");
+	   $("#navlayer").show("slow");
+	 },function(){
+	   //$("#daohang_ul").animate({height:"30px"},0);
+	  // $("#navlayer").slideUp("slow");
+	   $("#navlayer").hide("slow");
+	 })
+
+  });
+</script>
+<script language="javascript" type="text/javascript">
+var shortname = "{dede:global.art_shortname/}";
+var npage = {dede:field name='nowpage'/};
+var totalpage = {dede:field name='totalpage'/};
+var namehand = '{dede:field name='namehand'/}';
+var displaytype = '{dede:field name='displaytype'/}';
+var gtimer = null;
+//大图
+function dPlayBig()
+{
+	var imgObj = document.getElementById("bigimg");
+	window.open(imgObj.src);
+}
+//停止幻灯
+function dStopPlay()
+{
+	if(gtimer) clearTimeout(gtimer);
+	else dPlayNext();
+}
+//开始幻灯
+function dStartPlay()
+{
+	if(npage!=totalpage) {
+		gtimer = setTimeout("dPlayNext()",3000);
+	}
+}
+
+//上一张
+function dPlayPre(){
+
+	if(npage<2)
+	{
+		alert("这是第一页");
+	}
+	else
+	{
+		if(npage==2) {
+			if(namehand!='') location.href = namehand+shortname;
+			else location.href = "view.php?aid={dede:field name='id'/}";
+		} else if(displaytype=='st' && namehand!='') {
+			location.href = namehand+"_"+(npage-1)+shortname;
+		} else {
+			location.href = "view.php?aid={dede:field name='id'/}&pageno="+(npage-1);
+		}
+	}
+}
+
+//下一张
+function dPlayNext()
+{
+	if(npage==totalpage) { alert("没有了哦"); }
+	else
+	{
+		if(displaytype=='st' && namehand!='') location.href = namehand+"_"+(npage+1)+shortname;
+		else location.href = "view.php?aid={dede:field name='id'/}&pageno="+(npage+1);
+	}
+}
+-->
+</script>
+</head>
+<body>
+{dede:include filename="n_head_m.htm"/}
+<h3 class="headNew pa">{dede:field name="title"/}</h3>
+<article class="pd10">
+  <div class="info">发布时间:
+    <time>{dede:field name='pubdate' function='GetDateMk(@me)'/}</time>
+    &nbsp;&nbsp;浏览:
+    <script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script>
+    次&nbsp;&nbsp;作者:{dede:field name='writer' /}</div>
+</article>
+<div class="picbox"> 
+  
+    
+    {dede:field name='imgurls' alt='图片输出区'}
+    [field:pagestyle runphp='yes'] @me= (@me==3 ? '
+    <li>' : '');[/field:pagestyle] <a href='[field:linkurl/]' target='_blank'  [field:pagestyle runphp='yes'] @me= (@me==3 ? 'class="pic"' : ''); [/field:pagestyle]> <img src='[field:imgsrc/]' id='bigimg' [field:imgwidth /] alt='[field:alttext /]' border='0' /> </a>
+      <!-- 如果使用的是多页单图模式(幻灯)，把href里的链接改为 javascript:dPlayNext(); 表示点击看下一页 -->
+      <a href="[field:linkurl/]" [field:pagestyle runphp='yes']@me = (@me==3 ? 'class="title"' : '');[/field:pagestyle]>  </a> [field:pagestyle runphp='yes'] @me = (@me==3 ? '</li>' : ''); [/field:pagestyle]
+    {/dede:field}
+    
+  {dede:field name='pagestyle' alt='根据不同的页面风格输出不同的头信息' runphp='yes'}
+  if(@me==3) {@me = '<ul class="center">';}
+    else if(@me==2) {
+    @me = "
+    <center>
+      <a href='javascript:dPlayPre();' class='c1'>上一张</a>\r\n 
+      <a href='javascript:dPlayNext();' class='c1'>下一张</a>\r\n 
+      <a href='javascript:dStopPlay();' class='c1'>自动 / 暂停播放</a>\r\n
+    </center>
+    ";}
+    else {@me = '';}
+    {/dede:field}
+    
+  {dede:field name='pagestyle' alt='根据不同的风格输出不同的结尾信息' runphp='yes'}if(@me==3) {@me = '
+  </ul>';}
+  else if(@me==2) {@me = "<script language='javascript'>dStartPlay();</script>\r\n";}else {@me = '';}
+  {/dede:field} 
+  
+</div>
+<article>
+<div class="content">
+    <p>{dede:field name='body'/}</p>
+</div>
+</article>
+<div class="share">
+{dede:include filename="share_m.htm"/}
+</div>
+<div class="clear"></div>
+
+<div class="tabBox">
+  <div class="hd">
+    <h2>推荐图片<span>Related</span></h2>
+  </div>
+  <div class="tabimg">
+     {dede:arclist titlelen='45' row='4' typeid='5'}
+     <a target="_blank" href="view.php?aid=[field:id/]" title="[field:title /]"><img src="[field:litpic/]" alt="[field:title /]" /><p>[field:title /]</p></a>
+     {/dede:arclist}
+  </div>
+</div>
+
+{dede:type}<a class="readMore" href="list.php?tid=[field:id/]">返回栏目&gt;&gt;</a>{/dede:type}
+<div id="SOHUCS"></div>
+<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
+	src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrhc68T6&conf=prod_5830c86e2e9ffc5ca00dda09e7a10298">
+</script>
+{dede:include filename="foot_m.htm"/}
+</body>
+</html>

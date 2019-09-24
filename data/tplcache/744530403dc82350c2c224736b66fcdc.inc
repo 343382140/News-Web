@@ -1,0 +1,1 @@
+<div class="image_box_item"> <a href="[field:arcurl/]" title='[field:title /]'> <img src="[field:litpic/]" width="190" height="130" /> </a> <a href="[field:arcurl/]" title='[field:title /]'>[field:title /]</a> </div>

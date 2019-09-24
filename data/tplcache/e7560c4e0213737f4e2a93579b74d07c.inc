@@ -1,0 +1,1 @@
+{dede:charset}utf-8{/dede:charset}{dede:list}http://world.gmw.cn/node_4661_[1-5].htm{/dede:list}{dede:page}http://world.gmw.cn/2018-03/(*)/content_279(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}

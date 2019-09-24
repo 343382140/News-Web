@@ -1,0 +1,1 @@
+<li class="box7"><a href="[field:arcurl/]" title="[field:title /]"><img src="[field:litpic/]"/></a><a href="[field:arcurl/]" title="[field:title /]"><span>[field:title /]</span></a></li>

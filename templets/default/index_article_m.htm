@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{dede:field.seotitle/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="/m/style/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/m/style/js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="/m/style/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="/m/style/js/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="/m/style/js/swipe.js"></script>
+<script>
+ $(function(){
+     $("#dhmore").toggle(function(){
+	  // $("#daohang_ul").animate({height:"90px"},0);
+	  // $("#navlayer").slideDown("slow");
+	   $("#navlayer").show("slow");
+	 },function(){
+	   //$("#daohang_ul").animate({height:"30px"},0);
+	  // $("#navlayer").slideUp("slow");
+	   $("#navlayer").hide("slow");
+	 })
+
+  });
+</script>
+</head>
+
+<body>
+{dede:include filename="head_m.htm"/}
+<!-- 头条 -->
+{dede:arclist titlelen='35' row='1' flag='c'}
+<h3 class="headNew"><a href="view.php?aid=[field:id/]" title="[field:title /]">[field:title /]</a></h3>
+<h5 class="subNew">[field:description function="cn_substr(@me,60)"/]...<a href="view.php?aid=[field:id/]">[更多]</a></h5>
+{/dede:arclist}
+<!-- 焦点图 -->
+<div class="imgSwipeMain">
+  <div id="slider" class="swipe">
+    <div class="swipe-wrap swiper-wrapper">
+       {dede:arclist titlelen='45' row='5' flag='n,p'}
+      <div class="image swiper-slide" style="background:url([field:litpic/]) center no-repeat;background-size: cover;"> <a href="view.php?aid=[field:id/]" target="_blank"></a>
+        <div class="title">
+          <p>[field:title /]</p>
+        </div>
+      </div>
+      {/dede:arclist}
+    </div>
+  </div>
+  <div id="position"></div>
+</div>
+
+{dede:channelartlist row='5'}
+<!-- 元素开始 -->
+<div id="tabBox2" class="tabBox">
+  <div class="hd">
+    <h3><a href="list.php?tid={dede:field name='id'/}" >{dede:field name='typename'/}</a></h3>
+    <ul>
+      <li><a href="list.php?tid={dede:field name='id'/}">更多</a></li>
+    </ul>
+  </div>
+  <div class="bd">
+      <ul>
+        {dede:arclist titlelen='40' row='7'}
+        <li><a href="view.php?aid=[field:id/]" title="[field:title /]">[field:title /]</a></li>
+         {/dede:arclist}
+      </ul>
+  </div>
+</div>
+
+{/dede:channelartlist}
+{dede:include filename="foot_m.htm"/}
+</body>
+</html>

@@ -1,0 +1,1 @@
+<li class="paihang[field:global name=autoindex/]"><a class="b" href="[field:arcurl/]" title="[field:title /]">[field:title /]</a><br>[field:description function="cn_substr(@me,70)"/]...</li>

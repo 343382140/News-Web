@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<link href="./hzw/templets/admincp.css" rel="stylesheet" type="text/css" />
+<script src="./hzw/templets/admincp.js" type="text/javascript"></script>
+<title>修改文章内容</title>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div class="container" id="cpcontainer">
+  <div class="floattop">
+    <div class="itemtitle">
+      <h3><a href="http://www.csdn123.net" target="_blank" style="color:#09C">众大云采集</a></h3>
+      <ul class="tab1">
+		<li><a href="hzw_article_add.php"><span>单篇采集</span></a></li>
+        <li><a href="hzw_batch.php"><span>批量采集</span></a></li>
+        <li><a href="hzw_trueTime.php"><span>实时采集</span></a></li>
+        <li><a href="hzw_url.php"><span>网址采集</span></a></li>
+        <li><a href="hzw_fixedTime.php"><span>定时采集</span></a></li>
+        <li class="current"><a href="hzw_pending.php"><span>待发布</span></a></li>
+        <li><a href="hzw_released.php"><span>已发布</span></a></li>
+        <li><a href="hzw_original.php"><span>伪原创</span></a></li>
+        <li><a href="hzw_keyword.php"><span>关键词</span></a></li>
+        <li><a href="hzw_recycle.php"><span>回收站</span></a></li>
+        <li><a href="hzw_help.php"><span>帮助说明</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="floattopempty"></div>
+  <form action="?smt_update=yes" method="post" id="form1" onsubmit="return chkdata();">
+  <input type="hidden" value="<?php echo $arr["ID"]; ?>" name="update_id" />
+    <table class="tb tb2 ">
+      <tr>
+        <td colspan="2" class="td27" s="1">文章标题</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform" colspan="2"><input name="title" id="title"  type="text" class="txt" value="<?php echo $arr["title"]; ?>" style="width:500px"></td>        
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">文章主栏目</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform">
+          <span id='typeidct'>
+              <?php
+              $typeOptions = GetOptionList($cid,$cuserLogin->getUserChannel(),$channelid);
+              echo "<select name='typeid' id='typeid' style='width:240px'>\r\n";
+              echo "<option value='0'>请选择栏目...</option>\r\n";
+              echo $typeOptions;
+              echo "</select>";
+              ?>
+          </span>
+        </td>
+        <td class="vtop tips2" s="1">&nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">哪个用户发表？</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform"><input name="writer"  type="text" class="txt" value="<?php echo $arr["writer"]; ?>"></td>
+        <td class="vtop tips2" s="1"><strong>提示：</strong>请输入用户名 </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">是否显示内容的来源链接</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform"><ul onmouseover="altStyle(this);">
+		<?php if($arr["display_link"]==1) { ?>
+            <li class="checked">
+              <input class="radio" type="radio" name="display_link" value="1" checked="checked">
+              &nbsp;是</li>
+            <li>
+              <input class="radio" type="radio" name="display_link" value="0">
+              &nbsp;否</li>
+		<?php } else { ?>
+            <li>
+              <input class="radio" type="radio" name="display_link" value="1">
+              &nbsp;是</li>
+            <li class="checked">
+              <input class="radio" type="radio" name="display_link" value="0" checked="checked">
+              &nbsp;否</li>			  
+		<?php } ?>	  
+          </ul></td>
+        <td class="vtop tips2" s="1"><strong>提示：</strong>如果选择“是”，在文章的最下面会自动添加该文章的来源链接</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">图片是否本地化存储</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform"><ul onmouseover="altStyle(this);">
+		<?php if($arr["image_localized"]==1) { ?>
+            <li class="checked">
+              <input class="radio" type="radio" name="image_localized" value="1" checked="checked">
+              &nbsp;是</li>
+            <li>
+              <input class="radio" type="radio" name="image_localized" value="0">
+              &nbsp;否</li>
+		<?php } else { ?>
+            <li>
+              <input class="radio" type="radio" name="image_localized" value="1">
+              &nbsp;是</li>
+            <li class="checked">
+              <input class="radio" type="radio" name="image_localized" value="0" checked="checked">
+              &nbsp;否</li>		
+		<?php } ?>	
+          </ul></td>
+        <td class="vtop tips2" s="1"><strong>提示：</strong>如果选择“是”会下载远程图片保存到本地。</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">是否伪原创</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform"><ul onmouseover="altStyle(this);">
+		<?php if($arr["pseudo_original"]==1) { ?>
+            <li class="checked">
+              <input class="radio" type="radio" name="pseudo_original" value="1" checked="checked">
+              &nbsp;是</li>
+            <li>
+              <input class="radio" type="radio" name="pseudo_original" value="0">
+              &nbsp;否</li>
+		<?php } else { ?>
+            <li>
+              <input class="radio" type="radio" name="pseudo_original" value="1">
+              &nbsp;是</li>
+            <li class="checked">
+              <input class="radio" type="radio" name="pseudo_original" value="0" checked="checked">
+              &nbsp;否</li>		
+		<?php } ?>
+          </ul></td>
+        <td class="vtop tips2" s="1"><strong>提示：</strong>如果选择“是”会执行同义词替换伪原创，伪原创会影响到用户的阅读，不建议使用伪原创。</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">中文编码类型</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform"><ul onmouseover="altStyle(this);">
+		<?php if($arr["chinese_encoding"]==0) { ?>
+            <li class="checked">
+              <input class="radio" type="radio" name="chinese_encoding" value="0" checked="checked">
+              &nbsp;不转换</li>
+            <li>
+              <input class="radio" type="radio" name="chinese_encoding" value="1">
+              &nbsp;繁体</li>
+            <li>
+              <input class="radio" type="radio" name="chinese_encoding" value="2">
+              &nbsp;简体</li>
+		<?php } elseif($arr["chinese_encoding"]==1) { ?>
+            <li>
+              <input class="radio" type="radio" name="chinese_encoding" value="0">
+              &nbsp;不转换</li>
+            <li class="checked">
+              <input class="radio" type="radio" name="chinese_encoding" value="1" checked="checked">
+              &nbsp;繁体</li>
+            <li>
+              <input class="radio" type="radio" name="chinese_encoding" value="2">
+              &nbsp;简体</li>		
+		<?php } else { ?>
+            <li>
+              <input class="radio" type="radio" name="chinese_encoding" value="0">
+              &nbsp;不转换</li>
+            <li>
+              <input class="radio" type="radio" name="chinese_encoding" value="1">
+              &nbsp;繁体</li>
+            <li class="checked">
+              <input class="radio" type="radio" name="chinese_encoding" value="2" checked="checked">
+              &nbsp;简体</li>		
+		<?php } ?>
+          </ul></td>
+        <td class="vtop tips2" s="1">&nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">浏览量</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform"><input name="views"  type="text" class="txt" value="<?php echo $arr["views"]; ?>"></td>
+        <td class="vtop tips2" s="1"><strong>提示：</strong>最大的随机浏览量，此值越大，随机生成的浏览量也可能越大。</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td27" s="1">发布时间</td>
+      </tr>
+      <tr class="noborder" onmouseover="setfaq(this, 'faq95ed')">
+        <td class="vtop rowform"><input name="release_time"  type="text" class="txt" value="<?php echo date("Y-m-d H:i:s",$arr["release_time"])?>"></td>
+        <td class="vtop tips2" s="1"><strong>提示：</strong>默认发布时间为最近一小时内的随机时间</td>
+      </tr>
+      <tr>
+        <td colspan="15"><br />
+          <div class="fixsel">
+            <input type="submit" class="btn" value="　确定修改　" onClick="this.value='执行中，稍等…'" id="btn_smt">
+          </div></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<script>
+function chkdata()
+{
+	if($("title").value=="")
+	{	
+		alert("标题不能为空！！");	
+		$("title").focus();
+		$("btn_smt").value="　确定修改　";
+		return false;
+		
+	} else if($("typeid").value==0) {
+	
+		alert("请选择文章主栏目！");	
+		$("typeid").focus();
+		$("btn_smt").value="　确定修改　";
+		return false;
+	
+	} else {		
+		
+		return true;
+	}
+}
+</script>
+</body>
+</html>
